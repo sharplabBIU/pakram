@@ -392,6 +392,7 @@ EN = {
         "kicker": "Research M.A. track · Department of Psychology · Bar-Ilan University",
         "title": "Investigating minds, brains &amp; machines.",
         "lede": "PAKRAM is Bar-Ilan University's graduate division in Psychology, Cognition, Emotion and Brain. We train researchers who can measure the living brain, model the computations behind thought and feeling, and carry those skills into the laboratory or into industry.",
+        "ring": {"labels": ["Touch", "Social synchrony", "Reinforcement learning", "Language development", "MEG"], "bubble": "ab"},
         "cta_primary": "Explore the program",
         "cta_secondary": "How to apply",
         "facts": [
@@ -563,6 +564,7 @@ HE = {
         "kicker": "מסלול מחקרי לתואר שני · המחלקה לפסיכולוגיה · אוניברסיטת בר-אילן",
         "title": "חוקרים נפש, מוח ומכונה.",
         "lede": "פק״רם הוא המסלול לתואר שני בפסיכולוגיה, קוגניציה, רגש ומוח במחלקה לפסיכולוגיה של אוניברסיטת בר-אילן. אנו מכשירים חוקרות וחוקרים שיודעים למדוד את המוח החי, לבנות מודלים חישוביים של חשיבה ורגש, ולקחת את הכלים האלה אל המעבדה או אל התעשייה.",
+        "ring": {"labels": ["מגע", "סנכרון חברתי", "למידת חיזוק", "התפתחות שפה", "MEG"], "bubble": "אב"},
         "cta_primary": "להכרת התוכנית",
         "cta_secondary": "איך נרשמים",
         "facts": [

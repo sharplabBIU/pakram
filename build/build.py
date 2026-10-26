@@ -16,45 +16,51 @@ sys.path.insert(0, HERE)
 
 from content import SITE  # noqa: E402
 
-HERO_ART = """
-<svg viewBox="0 0 520 420" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#004128"/><stop offset="1" stop-color="#006937"/>
-    </linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#006937"/><stop offset="1" stop-color="#87cd7d"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#87cd7d" stop-opacity=".45"/><stop offset="1" stop-color="#87cd7d" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <circle cx="260" cy="210" r="190" fill="url(#glow)"/>
-  <g fill="none" stroke="url(#g1)" stroke-width="1.5" opacity=".55">
-    <path d="M110 300 C 140 160, 220 110, 300 120 S 440 200, 410 310"/>
-    <path d="M130 120 C 200 180, 260 180, 330 130 S 420 100, 440 160"/>
-    <path d="M90 210 C 160 240, 230 240, 300 300 S 400 330, 450 260"/>
-    <path d="M160 360 C 200 300, 280 280, 350 350"/>
-    <path d="M70 160 L 150 230 L 230 170 L 300 230 L 380 160 L 450 230"/>
-    <path d="M120 60 L 200 120 L 270 70 L 340 120 L 430 60"/>
-  </g>
-  <g fill="url(#g1)">
-    <circle cx="110" cy="300" r="7"/><circle cx="300" cy="120" r="9"/><circle cx="410" cy="310" r="7"/>
-    <circle cx="130" cy="120" r="6"/><circle cx="330" cy="130" r="6"/><circle cx="440" cy="160" r="6"/>
-    <circle cx="90" cy="210" r="6"/><circle cx="300" cy="300" r="8"/><circle cx="450" cy="260" r="6"/>
-    <circle cx="160" cy="360" r="6"/><circle cx="350" cy="350" r="6"/>
-    <circle cx="150" cy="230" r="5"/><circle cx="230" cy="170" r="5"/><circle cx="380" cy="160" r="5"/>
-    <circle cx="200" cy="120" r="5"/><circle cx="270" cy="70" r="5"/><circle cx="340" cy="120" r="5"/><circle cx="430" cy="60" r="5"/>
-  </g>
-  <g fill="url(#g2)">
-    <circle cx="260" cy="210" r="16"/><circle cx="70" cy="160" r="8"/><circle cx="450" cy="230" r="8"/><circle cx="120" cy="60" r="7"/>
-  </g>
-  <g fill="none" stroke="url(#g2)" stroke-width="2.2" stroke-linecap="round">
-    <path d="M30 400 h40 l12 -22 l14 44 l14 -60 l14 70 l14 -42 l12 10 h60"/>
-    <path d="M300 400 h40 l10 -14 l12 28 l12 -40 l12 46 l12 -28 l10 8 h60" opacity=".7"/>
-  </g>
-</svg>
-"""
+import math
+
+
+def hero_art(ring: dict) -> str:
+    """Ring of five research symbols with the Ψ mark at the centre."""
+    labels, bubble = ring["labels"], ring["bubble"]
+    cx, cy, R, NR = 260, 224, 140, 36
+    angles = [-90, -18, 54, 126, 198]
+    nodes = [(cx + R * math.cos(math.radians(a)), cy + R * math.sin(math.radians(a))) for a in angles]
+    icons = [
+        # touch: open hand
+        '<path d="M11 21 V11 a2.2 2.2 0 0 1 4.4 0 V18 V7 a2.2 2.2 0 0 1 4.4 0 V18 V9 a2.2 2.2 0 0 1 4.4 0 V18 V12 a2.2 2.2 0 0 1 4.4 0 V24 a8 8 0 0 1 -8 8 H18.5 a8 8 0 0 1 -6.4 -3.2 L7.6 22.7 a2.2 2.2 0 0 1 3.4 -2.8 Z"/>',
+        # social synchrony: two people joined by a wave
+        '<circle cx="10.5" cy="10" r="4"/><circle cx="25.5" cy="10" r="4"/><path d="M3 20 a7.5 7.5 0 0 1 15 0"/><path d="M18 20 a7.5 7.5 0 0 1 15 0"/><path d="M4 29 q3.5 -6 7 0 t7 0 t7 0 t7 0"/>',
+        # reinforcement learning: loop arrow with a reward star
+        '<path d="M29 15 a11.5 11.5 0 1 0 -1.5 12"/><path d="M29 8 v7 h-7"/><path d="M18 13.5 l1.7 3.6 3.9 .5 -2.8 2.7 .7 3.9 -3.5 -1.9 -3.5 1.9 .7 -3.9 -2.8 -2.7 3.9 -.5 Z" fill="#004128" stroke="none"/>',
+        # language development: speech bubble with letters
+        '<path d="M7 6 h22 a3.5 3.5 0 0 1 3.5 3.5 v13 a3.5 3.5 0 0 1 -3.5 3.5 H17 l-7 6 v-6 H7 a3.5 3.5 0 0 1 -3.5 -3.5 v-13 A3.5 3.5 0 0 1 7 6 Z"/><text x="18" y="20" text-anchor="middle" font-size="11.5" font-weight="700" fill="#004128" stroke="none" font-family="Heebo, Rubik, sans-serif">' + bubble + '</text>',
+        # MEG: head with a crown of sensors and a signal trace
+        '<circle cx="18" cy="21" r="7.5"/><circle cx="18" cy="7.5" r="1.6" fill="#004128" stroke="none"/><circle cx="8.5" cy="11.5" r="1.6" fill="#004128" stroke="none"/><circle cx="27.5" cy="11.5" r="1.6" fill="#004128" stroke="none"/><circle cx="4.5" cy="20" r="1.6" fill="#004128" stroke="none"/><circle cx="31.5" cy="20" r="1.6" fill="#004128" stroke="none"/><path d="M4 33 h6 l2 -4 l3 7 l3 -6 l2 3 h12"/>',
+    ]
+    spokes = "".join(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}"/>' for x, y in nodes)
+    out = [f'<svg viewBox="0 0 520 440" role="img" aria-label="{esc(", ".join(labels))}" xmlns="http://www.w3.org/2000/svg">']
+    out.append('<defs><radialGradient id="ringGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#87cd7d" stop-opacity=".35"/><stop offset="1" stop-color="#87cd7d" stop-opacity="0"/></radialGradient></defs>')
+    out.append(f'<circle cx="{cx}" cy="{cy}" r="{R + 60}" fill="url(#ringGlow)"/>')
+    out.append(f'<g stroke="#c3dc87" stroke-width="1.5" stroke-dasharray="3 5">{spokes}</g>')
+    out.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="#006937" stroke-width="2.5"/>')
+    out.append(f'<circle cx="{cx}" cy="{cy}" r="48" fill="#e7f2d3" stroke="#87cd7d" stroke-width="1.5"/>')
+    out.append(f'<text x="{cx}" y="{cy + 21}" text-anchor="middle" font-family="Frank Ruhl Libre, Rubik, serif" font-weight="700" font-size="60" fill="#004128">Ψ</text>')
+    for i, ((x, y), icon, label) in enumerate(zip(nodes, icons, labels)):
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{NR}" fill="#fff" stroke="#006937" stroke-width="2.5"/>')
+        out.append(f'<g transform="translate({x - 18:.1f},{y - 18:.1f})" fill="none" stroke="#004128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{icon}</g>')
+        words = label.split(" ")
+        if i == 0:      # top
+            tx, ty, anchor = cx, y - NR - 14, "middle"; lines = [label]
+        elif i == 1:    # right
+            tx, ty, anchor = x + NR + 10, y + (5 if len(words) == 1 else -3), "start"; lines = words if len(words) == 2 else [label]
+        elif i == 4:    # left
+            tx, ty, anchor = x - NR - 10, y + (5 if len(words) == 1 else -3), "end"; lines = words if len(words) == 2 else [label]
+        else:           # bottom pair
+            tx, ty, anchor = x, y + NR + 18, "middle"; lines = words if len(words) == 2 else [label]
+        tspans = "".join(f'<tspan x="{tx:.1f}" dy="{0 if k == 0 else 16}">{esc(w)}</tspan>' for k, w in enumerate(lines))
+        out.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="{anchor}" font-size="13.5" font-weight="600" fill="#2f3b47" font-family="Heebo, Rubik, system-ui, sans-serif">{tspans}</text>')
+    out.append("</svg>")
+    return "".join(out)
 
 
 def esc(s: str) -> str:
@@ -203,7 +209,7 @@ def render_page(lang: str) -> str:
         <a class="btn btn-secondary" href="#apply">{esc(c["hero"]["cta_secondary"])}</a>
       </div>
     </div>
-    <div class="hero-art">{HERO_ART}</div>
+    <div class="hero-art">{hero_art(c["hero"]["ring"])}</div>
   </div>
 </section>
 <div class="wrap facts-wrap">
