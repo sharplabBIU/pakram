@@ -216,7 +216,10 @@ def render_page(lang: str) -> str:
     <div class="hero-art">{HERO_ART}</div>
   </div>
 </section>
-<div class="wrap facts-wrap"><div class="facts">{facts}</div></div>
+<div class="wrap facts-wrap">
+  <div class="facts">{facts}</div>
+  <div class="distinctions"><span class="label">{esc(c["hero"]["distinctions"]["label"])}</span><p>{c["hero"]["distinctions"]["text"]}</p></div>
+</div>
 
 <section class="block" id="about">
   <div class="wrap">

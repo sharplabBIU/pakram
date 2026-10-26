@@ -263,3 +263,22 @@ html[dir="rtl"] .prof .key dd.pubs { direction: ltr; text-align: left; }
 .practicum a { color: #a8e6df; text-decoration: underline; text-underline-offset: 2px; }
 .practicum a:hover { color: #fff; }
 .fact a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Distinctions line under the facts strip */
+.distinctions { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; padding: 16px 20px; border: 1px solid var(--line); border-inline-start: 4px solid var(--accent); border-radius: var(--radius); background: var(--bg-elev); box-shadow: var(--shadow); }
+@media (min-width: 720px) { .distinctions { flex-direction: row; align-items: flex-start; gap: 18px; } }
+.distinctions .label { flex: none; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); padding-top: 5px; white-space: nowrap; }
+html[dir="rtl"] .distinctions .label { letter-spacing: 0; font-size: .88rem; }
+.distinctions p { margin: 0; color: var(--ink-2); font-size: .97rem; line-height: 1.6; }
+.distinctions em { font-style: normal; font-weight: 600; color: var(--ink); }
+
+/* Faculty cards: never wider than the viewport on phones */
+.prof { min-width: 0; }
+.prof > div { min-width: 0; }
+.prof .key dd, .prof li, .prof .summary { overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .prof { grid-template-columns: 1fr; }
+  .prof .avatar { width: 52px; height: 52px; font-size: 1.05rem; }
+  .prof .key { grid-template-columns: 1fr; gap: 2px 0; }
+  .prof .key dt { white-space: normal; padding-top: 8px; }
+}

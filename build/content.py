@@ -359,6 +359,10 @@ EN = {
             ("85%", "of surveyed graduates hold research positions"),
             ("MEG · EEG · TMS · VR", "Brain measurement and stimulation, cutting-edge VR (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>) and computational modelling"),
         ],
+        "distinctions": {
+            "label": "Why PAKRAM",
+            "text": "Our faculty hold <em>European Research Council (ERC)</em> and <em>Israel Science Foundation Bereshit</em> grants, run <em>Israel's only MEG laboratory</em>, and publish in <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> and <em>Neuroscience &amp; Biobehavioral Reviews</em>.",
+        },
     },
     "about": {
         "kicker": "About the division",
@@ -533,6 +537,10 @@ HE = {
             ("85%", "מהבוגרים שנסקרו מועסקים בתפקידי מחקר"),
             ("MEG · EEG · TMS · VR", "מדידה וגרייה מוחית, מציאות מדומה בחזית הטכנולוגיה (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>) ומידול חישובי"),
         ],
+        "distinctions": {
+            "label": "למה פק״רם",
+            "text": "חברי הסגל שלנו זוכי מענקי <em>מועצת המחקר האירופית (ERC)</em> ומענק <em>«בראשית» של הקרן הלאומית למדע</em>, מפעילים את <em>מעבדת ה-MEG היחידה בישראל</em>, ומפרסמים בכתבי העת <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> ו-<em>Neuroscience &amp; Biobehavioral Reviews</em>.",
+        },
     },
     "about": {
         "kicker": "על המסלול",
