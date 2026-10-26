@@ -98,24 +98,27 @@ def scene_drumming() -> str:
 
 
 def scene_rl() -> str:
+    """An anxious person imagining the reinforcement-learning update."""
     sans = "Heebo, Rubik, system-ui, sans-serif"
     return f"""
 <rect width="128" height="128" fill="{BG}"/>
-<rect x="18" y="8" width="92" height="30" rx="7" fill="#fff" stroke="{GREEN}" stroke-width="2"/>
-<text x="30" y="28" font-size="12.5" font-weight="700" fill="{DEEP}" font-family="{sans}">Agent</text>
-<text x="92" y="32" text-anchor="middle" font-size="24" font-weight="700" fill="{DEEP}" font-family="Frank Ruhl Libre, serif">Ψ</text>
-<path d="M85 31 c8 -2 8 -6 0 -8 c-8 -2 -8 -6 1 -8" stroke="{GOLD}" stroke-width="1.9" fill="none" stroke-linecap="round"/>
-<circle cx="87" cy="14.5" r="1.5" fill="{GOLD}"/>
-<rect x="14" y="90" width="100" height="30" rx="7" fill="#fff" stroke="{GREEN}" stroke-width="2"/>
-<text x="64" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="{DEEP}" font-family="{sans}">Environment</text>
-<path d="M104 38 V84" stroke="{BLUE}" stroke-width="2.2" fill="none"/>
-<path d="M99 79 l5 6 5 -6" stroke="{BLUE}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M24 90 V44" stroke="{GREEN}" stroke-width="2.2" fill="none"/>
-<path d="M19 49 l5 -6 5 6" stroke="{GREEN}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="97" y="52" text-anchor="end" font-size="10.5" font-style="italic" fill="{BLUE}" font-family="{sans}">a</text>
-<text x="31" y="52" font-size="10.5" font-style="italic" fill="{GREEN}" font-family="{sans}">s, r</text>
-<text x="64" y="68" text-anchor="middle" font-size="10.5" font-style="italic" fill="{INK}" font-family="{sans}">δ = r + γV(s′) − V(s)</text>
-<text x="64" y="81" text-anchor="middle" font-size="9.5" font-style="italic" fill="{INK}" font-family="{sans}">V(s) ← V(s) + αδ</text>
+<rect y="114" width="128" height="14" fill="{FLOOR}"/>
+<path d="M22 128 V106 a30 30 0 0 1 60 0 V128 Z" fill="{GREEN}"/>
+<path d="M74 110 q10 -8 8 -22" stroke="{SKIN}" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="81" cy="86" r="5" fill="{SKIN}"/>
+<rect x="45" y="86" width="14" height="12" fill="{SKIN}"/>
+<circle cx="52" cy="78" r="16" fill="{SKIN}"/>
+<path d="M36 74 a16 16 0 0 1 32 0 v-4 a16 9 0 0 0 -32 0 z" fill="{HAIR}"/>
+<path d="M42 72 l8 3" stroke="{INK}" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M62 75 l-8 -3" stroke="{INK}" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="46.5" cy="79" r="1.9" fill="{INK}"/><circle cx="57.5" cy="79" r="1.9" fill="{INK}"/>
+<path d="M45 88 q3.5 -3 7 0 t7 0" stroke="{INK}" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<path d="M70 66 q3 5 0 8 q-3 -3 0 -8 z" fill="#7fc4ff" stroke="#3b8fd9" stroke-width=".8"/>
+<circle cx="70" cy="58" r="3.2" fill="#fff" stroke="{GREY}" stroke-width="1.2"/>
+<circle cx="76" cy="50" r="2.2" fill="#fff" stroke="{GREY}" stroke-width="1.2"/>
+<rect x="19" y="12" width="90" height="34" rx="12" fill="#fff" stroke="{GREY}" stroke-width="1.4"/>
+<text x="64" y="27" text-anchor="middle" font-size="10.5" font-style="italic" font-weight="600" fill="{INK}" font-family="{sans}">δ = r + γV′ − V</text>
+<text x="64" y="40" text-anchor="middle" font-size="10.5" font-style="italic" font-weight="600" fill="{INK}" font-family="{sans}">V ← V + αδ</text>
 """
 
 
@@ -160,7 +163,7 @@ def scene_language(word: str) -> str:
 
 
 def hero_art(lang: str, aria_label: str) -> str:
-    cx, cy, R, NR = 300, 300, 196, 70
+    cx, cy, R, NR = 300, 300, 196, 78
     angles = [-90, -18, 54, 126, 198]
     word = "כלב" if lang == "he" else "dog"
     centre = "פק״רם" if lang == "he" else "PAKRAM"
