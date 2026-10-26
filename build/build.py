@@ -26,13 +26,13 @@ HERO_ART = """
 <svg viewBox="0 0 520 420" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#102a43"/><stop offset="1" stop-color="#157f78"/>
+      <stop offset="0" stop-color="#004128"/><stop offset="1" stop-color="#006937"/>
     </linearGradient>
     <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#d9542b"/><stop offset="1" stop-color="#c9962b"/>
+      <stop offset="0" stop-color="#006937"/><stop offset="1" stop-color="#87cd7d"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#d9542b" stop-opacity=".35"/><stop offset="1" stop-color="#d9542b" stop-opacity="0"/>
+      <stop offset="0" stop-color="#87cd7d" stop-opacity=".45"/><stop offset="1" stop-color="#87cd7d" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <circle cx="260" cy="210" r="190" fill="url(#glow)"/>
