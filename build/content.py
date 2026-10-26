@@ -118,6 +118,42 @@ FACULTY_BASE = [
             ("orcid", "https://orcid.org/0000-0003-4946-2110", False),
         ],
     },
+    {
+        "id": "aron-weller",
+        "key_work": 1,
+        "key_award": 0,
+        "initials": "AW",
+        "works": [
+            "Weller, A., Smith, G. P., &amp; Gibbs, J. (1990). Endogenous cholecystokinin reduces feeding in young rats. <em>Science</em>, 247(4950), 1589–1591.",
+            "Feldman, R., Weller, A., Zagoory-Sharon, O., &amp; Levine, A. (2007). Evidence for a neuroendocrinological foundation of human affiliation: Plasma oxytocin levels across pregnancy and the postpartum period predict mother–infant bonding. <em>Psychological Science</em>, 18(11), 965–970.",
+            "Feldman, R., Eidelman, A. I., Sirota, L., &amp; Weller, A. (2002). Comparison of skin-to-skin (kangaroo) and traditional care: Parenting outcomes and preterm infant development. <em>Pediatrics</em>, 110(1), 16–26.",
+            "Levine, A., Zagoory-Sharon, O., Feldman, R., Lewis, J. G., &amp; Weller, A. (2007). Measuring cortisol in human psychobiological studies. <em>Physiology &amp; Behavior</em>, 90(1), 43–53.",
+            "Mikulincer, M., Florian, V., &amp; Weller, A. (1993). Attachment styles, coping strategies, and posttraumatic psychological distress: The impact of the Gulf War in Israel. <em>Journal of Personality and Social Psychology</em>, 64(5), 817–826.",
+        ],
+        "links": [
+            ("biu", "https://psychology.biu.ac.il/weller", True),
+            ("scholar", "https://scholar.google.com/citations?user=4DjuxJMAAAAJ", False),
+            ("gonda", "https://gondabrain.biu.ac.il/en/node/309", False),
+        ],
+    },
+    {
+        "id": "michal-lavidor",
+        "key_work": 0,
+        "key_award": 0,
+        "initials": "ML",
+        "works": [
+            "Jacobson, L., Koslowsky, M., &amp; Lavidor, M. (2012). tDCS polarity effects in motor and cognitive domains: A meta-analytical review. <em>Experimental Brain Research</em>, 216(1), 1–10.",
+            "Jacobson, L., Javitt, D. C., &amp; Lavidor, M. (2011). Activation of inhibition: Diminishing impulsive behavior by direct current stimulation over the inferior frontal gyrus. <em>Journal of Cognitive Neuroscience</em>, 23(11), 3380–3387.",
+            "Ditye, T., Jacobson, L., Walsh, V., &amp; Lavidor, M. (2012). Modulating behavioral inhibition by tDCS combined with cognitive training. <em>Experimental Brain Research</em>, 219(3), 363–368.",
+            "Axelrod, V., Rees, G., Lavidor, M., &amp; Bar, M. (2015). Increasing propensity to mind-wander with transcranial direct current stimulation. <em>Proceedings of the National Academy of Sciences</em>, 112(11), 3314–3319.",
+            "Lavidor, M., &amp; Walsh, V. (2004). The nature of foveal representation. <em>Nature Reviews Neuroscience</em>, 5(9), 729–735.",
+        ],
+        "links": [
+            ("biu", "https://psychology.biu.ac.il/en/node/638", True),
+            ("scholar", "https://scholar.google.com/citations?user=T9bnrl8AAAAJ", False),
+            ("gonda", "https://gondabrain.biu.ac.il/en/node/312", False),
+        ],
+    },
 ]
 
 LINK_LABELS = {
@@ -187,6 +223,29 @@ FACULTY_TEXT = {
                 "Visiting researcher, Rotman Research Institute, University of Toronto (2016–2017)",
             ],
         },
+        "aron-weller": {
+            "name": "Aron Weller",
+            "role": "Professor Emeritus, Department of Psychology · Gonda Multidisciplinary Brain Research Center · Developmental Psychobiology Lab",
+            "summary": "Studies how early-life experience, maternal care, stress and diet shape emotional and feeding regulation, using rat models of depression, obesity and binge eating with a long-standing focus on gut peptides such as cholecystokinin, on oxytocin and cortisol, epigenetics and cannabinoids. His human collaborations include influential studies of kangaroo care and of oxytocin and mother–infant bonding.",
+            "awards": [
+                "Israel Science Foundation research grants, funded continuously from 2002 through 2029",
+                "United States–Israel Binational Science Foundation (BSF) grant (2002–2006) and NIH/NIDDK R01 sub-contract (2007–2012)",
+                "Israel Ministry of Science grants (2017–2022)",
+                "Distinguished Mentor Award, Israel Society for Biological Psychiatry (2017)",
+                "Editorial board, Developmental Psychobiology (since 2008); Chair, Inter-University Forum for Biomedical Research in Israel (since 2020)",
+            ],
+        },
+        "michal-lavidor": {
+            "name": "Michal Lavidor",
+            "role": "Professor, Department of Psychology · Gonda Multidisciplinary Brain Research Center · Cognitive Neuroscience Lab (brain stimulation)",
+            "summary": "Uses non-invasive brain stimulation (TMS, tDCS and tACS) together with behavioral and EEG methods to probe how the two hemispheres share language, reading, cognitive control and creative thinking, and designs stimulation and training protocols that enhance these abilities. She also publishes widely cited meta-analyses in cognitive and social neuroscience.",
+            "awards": [
+                "European Research Council (ERC) Starting Grant, project INSPIRE: interhemispheric stimulation promotes reading (2008–2012)",
+                "European Commission Marie Curie Excellence Award (2006)",
+                "Marie Curie Research Fellowship, University of York (2000–2001)",
+                "German-Israeli Foundation for Scientific Research and Development (GIF) grant",
+            ],
+        },
     },
     "he": {
         "paul-sharp": {
@@ -247,6 +306,29 @@ FACULTY_TEXT = {
                 "מענק מחקר של הקרן הלאומית למדע על תפקיד הקשב החזותי בתפיסת פנים (2010–2013)",
                 "מענק ציוד של הקרן הלאומית למדע (2010)",
                 "חוקר אורח, מכון רוטמן למחקר, אוניברסיטת טורונטו (2016–2017)",
+            ],
+        },
+        "aron-weller": {
+            "name": "אהרון ולר",
+            "role": "פרופסור אמריטוס, המחלקה לפסיכולוגיה · המרכז הרב-תחומי לחקר המוח ע״ש גונדה · המעבדה לפסיכוביולוגיה התפתחותית",
+            "summary": "חוקר כיצד חוויות מוקדמות בחיים, טיפול אימהי, דחק ותזונה מעצבים ויסות רגשי וויסות אכילה, באמצעות מודלים של חולדות לדיכאון, להשמנה ולאכילה בולמוסית, עם התמקדות ארוכת שנים בפפטידי מעי כמו כולציסטוקינין, באוקסיטוצין ובקורטיזול, באפיגנטיקה ובקנבינואידים. שיתופי הפעולה שלו במחקר בבני אדם כוללים מחקרים רבי-השפעה על טיפול קנגורו ועל אוקסיטוצין וקשר אם–תינוק.",
+            "awards": [
+                "מענקי מחקר של הקרן הלאומית למדע ברציפות משנת 2002 ועד 2029",
+                "מענק הקרן הדו-לאומית למדע ארה״ב–ישראל (BSF) (2002–2006) וקבלנות משנה במענק NIH/NIDDK R01 (2007–2012)",
+                "מענקי משרד המדע (2017–2022)",
+                "פרס המנחה המצטיין של האגודה הישראלית לפסיכיאטריה ביולוגית (2017)",
+                "חבר מערכת כתב העת Developmental Psychobiology (מאז 2008); יו״ר הפורום הבין-אוניברסיטאי למחקר ביו-רפואי בישראל (מאז 2020)",
+            ],
+        },
+        "michal-lavidor": {
+            "name": "מיכל לבידור",
+            "role": "פרופסור מן המניין, המחלקה לפסיכולוגיה · המרכז הרב-תחומי לחקר המוח ע״ש גונדה · המעבדה לנוירו-מדע קוגניטיבי (גרייה מוחית)",
+            "summary": "משתמשת בגרייה מוחית לא-פולשנית (TMS, tDCS ו-tACS) יחד עם שיטות התנהגותיות ו-EEG כדי לבחון כיצד שתי ההמיספרות חולקות ביניהן שפה, קריאה, בקרה קוגניטיבית וחשיבה יצירתית, ומפתחת פרוטוקולים של גרייה ואימון המשפרים יכולות אלה. היא מפרסמת גם מטא-אנליזות רבות-ציטוט בנוירו-מדע קוגניטיבי וחברתי.",
+            "awards": [
+                "מענק ERC Starting של מועצת המחקר האירופית, פרויקט INSPIRE על גרייה בין-המיספרית לקידום הקריאה (2008–2012)",
+                "פרס המצוינות ע״ש מארי קירי של הנציבות האירופית (2006)",
+                "מלגת מחקר מארי קירי, אוניברסיטת יורק (2000–2001)",
+                "מענק הקרן הגרמנית-ישראלית למחקר ולפיתוח מדעי (GIF)",
             ],
         },
     },
@@ -361,7 +443,7 @@ EN = {
         ],
         "distinctions": {
             "label": "Why PAKRAM",
-            "text": "Our faculty hold <em>European Research Council (ERC)</em> and <em>Israel Science Foundation Bereshit</em> grants, run <em>Israel's only MEG laboratory</em>, and publish in <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> and <em>Neuroscience &amp; Biobehavioral Reviews</em>.",
+            "text": "Our faculty hold <em>European Research Council (ERC) Starting and Consolidator</em> grants and an <em>Israel Science Foundation Bereshit</em> grant, run <em>Israel's only MEG laboratory</em>, and publish in <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> and <em>Neuroscience &amp; Biobehavioral Reviews</em>.",
         },
     },
     "about": {
@@ -448,7 +530,7 @@ EN = {
     "faculty": {
         "kicker": "Faculty",
         "title": "Meet the professors",
-        "lede": "Six principal investigators span computational psychiatry, social and affective neuroscience, magnetoencephalography, developmental science and the neuropsychology of perception and memory. Each supervises M.A. theses in the division. Open a card to read more about their work.",
+        "lede": "Eight principal investigators span computational psychiatry, social and affective neuroscience, magnetoencephalography, brain stimulation, developmental science and psychobiology, and the neuropsychology of perception and memory. Each supervises M.A. theses in the division. Open a card to read more about their work.",
         "labels": {"key_work": "Key publication", "award": "Award", "highlight": "Highlight", "read_more": "Read more", "show_less": "Show less", "more_works": "More selected works", "more_awards": "More grants & awards"},
         "members": faculty_members("en"),
     },
@@ -539,7 +621,7 @@ HE = {
         ],
         "distinctions": {
             "label": "למה פק״רם",
-            "text": "חברי הסגל שלנו זוכי מענקי <em>מועצת המחקר האירופית (ERC)</em> ומענק <em>«בראשית» של הקרן הלאומית למדע</em>, מפעילים את <em>מעבדת ה-MEG היחידה בישראל</em>, ומפרסמים בכתבי העת <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> ו-<em>Neuroscience &amp; Biobehavioral Reviews</em>.",
+            "text": "חברי הסגל שלנו זוכי מענקי <em>ERC Starting ו-ERC Consolidator של מועצת המחקר האירופית</em> ומענק <em>«בראשית» של הקרן הלאומית למדע</em>, מפעילים את <em>מעבדת ה-MEG היחידה בישראל</em>, ומפרסמים בכתבי העת <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> ו-<em>Neuroscience &amp; Biobehavioral Reviews</em>.",
         },
     },
     "about": {
@@ -626,7 +708,7 @@ HE = {
     "faculty": {
         "kicker": "סגל",
         "title": "הכירו את חברי הסגל",
-        "lede": "שישה חוקרים ראשיים המכסים פסיכיאטריה חישובית, נוירו-מדע חברתי ורגשי, מגנטואנצפלוגרפיה, מדעי ההתפתחות ונוירופסיכולוגיה של תפיסה וזיכרון. כל אחד מהם מנחה עבודות תזה במסלול. פתחו כרטיס כדי לקרוא עוד על עבודתם.",
+        "lede": "שמונה חוקרים ראשיים המכסים פסיכיאטריה חישובית, נוירו-מדע חברתי ורגשי, מגנטואנצפלוגרפיה, גרייה מוחית, מדעי ההתפתחות ופסיכוביולוגיה, ונוירופסיכולוגיה של תפיסה וזיכרון. כל אחד מהם מנחה עבודות תזה במסלול. פתחו כרטיס כדי לקרוא עוד על עבודתם.",
         "labels": {"key_work": "פרסום מרכזי", "award": "פרס / מענק", "highlight": "נקודת ציון", "read_more": "קראו עוד", "show_less": "הציגו פחות", "more_works": "עבודות נבחרות נוספות", "more_awards": "מענקים ופרסים נוספים"},
         "members": faculty_members("he"),
     },
