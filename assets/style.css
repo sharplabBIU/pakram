@@ -280,3 +280,20 @@ html[dir="rtl"] .direction .who { letter-spacing: 0; font-size: .84rem; }
 html[dir="rtl"] .hero .kicker { font-size: .84rem; }
 /* With the full nav visible, keep the brand on one line until the header is wide enough */
 @media (min-width: 1180px) and (max-width: 1380px) { .brand-text small { display: none; } }
+
+/* Hebrew page: modern Israeli-tech typography (Rubik headings, Assistant body) */
+html[lang="he"] {
+  --font-display: "Rubik", "Heebo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-body: "Assistant", "Heebo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+html[lang="he"] body { font-size: 18.5px; line-height: 1.6; }
+html[lang="he"] h1, html[lang="he"] h2, html[lang="he"] h3, html[lang="he"] h4 { font-weight: 700; letter-spacing: -.01em; }
+html[lang="he"] h1 { font-weight: 800; }
+html[lang="he"] .hero h1 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); line-height: 1.18; }
+html[lang="he"] .hero h1 em { font-style: normal; color: var(--accent); }
+html[lang="he"] h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
+html[lang="he"] .fact b { font-weight: 700; font-size: 1.25rem; }
+html[lang="he"] .kicker { font-weight: 700; }
+html[lang="he"] .btn { font-weight: 700; }
+html[lang="he"] .nav a, html[lang="he"] .lang-tabs a { font-weight: 600; }
+html[lang="he"] .brand-mark { font-family: "Rubik", sans-serif; }

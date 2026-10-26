@@ -118,6 +118,11 @@ def render_page(lang: str) -> str:
     base = "" if lang == "en" else "../"
     other_href = "he/" if lang == "en" else "../"
     dir_attr = "rtl" if lang == "he" else "ltr"
+    fonts_url = (
+        "https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700&display=swap"
+        if lang == "he"
+        else "https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Heebo:wght@400;500;600;700&display=swap"
+    )
     nav_links = "".join(f'<a href="#{esc(h)}">{esc(t)}</a>' for h, t in c["nav"])
     facts = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{t}</span></div>' for n, t in c["hero"]["facts"])
     def award_box(a):
@@ -161,7 +166,7 @@ def render_page(lang: str) -> str:
 <link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="{fonts_url}" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/style.css">
 </head>
 <body>
