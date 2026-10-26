@@ -86,8 +86,29 @@ def render_reading(block: dict) -> str:
 def render_faculty(members: list[dict], labels: dict) -> str:
     out = []
     for m in members:
-        works = render_list(m["works"], "pubs") if m.get("works") else ""
-        awards = render_list(m["awards"]) if m.get("awards") else ""
+        kw_i = m.get("key_work", 0)
+        key_work = m["works"][kw_i]
+        rest_works = [w for i, w in enumerate(m["works"]) if i != kw_i]
+        if m["awards"]:
+            ka_i = m.get("key_award", 0)
+            ka_label, key_award = labels["award"], m["awards"][ka_i]
+            rest_awards = [a for i, a in enumerate(m["awards"]) if i != ka_i]
+        else:
+            ka_label, key_award, rest_awards = labels["highlight"], m.get("highlight", ""), []
+        key = f'<dl class="key"><dt>{esc(labels["key_work"])}</dt><dd class="pubs">{key_work}</dd>'
+        if key_award:
+            key += f'<dt>{esc(ka_label)}</dt><dd>{key_award}</dd>'
+        key += "</dl>"
+        more = ""
+        if rest_works:
+            more += f'<h4>{esc(labels["more_works"])}</h4>{render_list(rest_works, "pubs")}'
+        if rest_awards:
+            more += f'<h4>{esc(labels["more_awards"])}</h4>{render_list(rest_awards)}'
+        details = (
+            f'<details><summary><span class="more">{esc(labels["read_more"])}</span>'
+            f'<span class="less">{esc(labels["show_less"])}</span></summary><div>{more}</div></details>'
+            if more else ""
+        )
         links = "".join(
             f'<a href="{esc(l["url"])}" target="_blank" rel="noopener"{" class=\"primary\"" if l.get("primary") else ""}>{esc(l["label"])}</a>'
             for l in m["links"]
@@ -99,8 +120,8 @@ def render_faculty(members: list[dict], labels: dict) -> str:
     <h3>{esc(m["name"])}</h3>
     <div class="role">{esc(m["role"])}</div>
     <p class="summary">{m["summary"]}</p>
-    {f'<h4>{esc(labels["works"])}</h4>{works}' if works else ''}
-    {f'<h4>{esc(labels["awards"])}</h4>{awards}' if awards else ''}
+    {key}
+    {details}
     <div class="links">{links}</div>
   </div>
 </article>"""
@@ -115,12 +136,13 @@ def render_page(lang: str) -> str:
     other_href = "he/" if lang == "en" else "../"
     dir_attr = "rtl" if lang == "he" else "ltr"
     nav_links = "".join(f'<a href="#{esc(h)}">{esc(t)}</a>' for h, t in c["nav"])
-    facts = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{esc(t)}</span></div>' for n, t in c["hero"]["facts"])
+    facts = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{t}</span></div>' for n, t in c["hero"]["facts"])
     pills = "".join(f"<li>{esc(p)}</li>" for p in c["about"]["pills"])
 
     def paras(ps):
         return "".join(f"<p>{p}</p>" for p in ps)
 
+    mu = c["multi"]
     pw = c["pathways"]
     cp = c["comppsych"]
     ea = c["emotion_ai"]
@@ -129,6 +151,7 @@ def render_page(lang: str) -> str:
     ap = c["apply"]
     ft = c["footer"]
 
+    pillars = "".join(f'<div class="pillar"><h3>{esc(pl["title"])}</h3><p>{pl["text"]}</p></div>' for pl in mu["pillars"])
     steps = "".join(f'<div class="step"><h3>{esc(s["title"])}</h3><p>{s["text"]}</p></div>' for s in pa["steps"])
     practica = "".join(
         f'<div class="practicum"><div class="icon">{ICONS[p["icon"]]}</div><h3>{esc(p["title"])}</h3><p>{p["text"]}</p>{render_list(p["bullets"])}</div>'
@@ -206,7 +229,18 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block alt" id="pathways">
+<section class="block alt" id="multidisciplinary">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">{esc(mu["kicker"])}</span>
+      <h2>{esc(mu["title"])}</h2>
+    </div>
+    <div class="prose">{paras(mu["paras"])}</div>
+    <div class="pillars">{pillars}</div>
+  </div>
+</section>
+
+<section class="block" id="pathways">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">{esc(pw["kicker"])}</span>
@@ -232,7 +266,7 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block" id="computational-psychiatry">
+<section class="block alt" id="computational-psychiatry">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">{esc(cp["kicker"])}</span>
@@ -245,7 +279,7 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block alt" id="emotion-ai">
+<section class="block" id="emotion-ai">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">{esc(ea["kicker"])}</span>
@@ -258,7 +292,7 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block" id="faculty">
+<section class="block alt" id="faculty">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">{esc(fa["kicker"])}</span>
@@ -269,7 +303,7 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block alt" id="your-path">
+<section class="block" id="your-path">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">{esc(pa["kicker"])}</span>
@@ -281,7 +315,7 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block" id="apply">
+<section class="block alt" id="apply">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">{esc(ap["kicker"])}</span>

@@ -12,6 +12,8 @@ Strings may contain simple HTML (<em>, <a>, <span class="ltr">).
 FACULTY_BASE = [
     {
         "id": "paul-sharp",
+        "key_work": 0,
+        "key_award": 1,
         "initials": "PS",
         "works": [
             "Sharp, P. B., &amp; Eldar, E. (2024). Humans adaptively deploy forward and backward prediction. <em>Nature Human Behaviour</em>, 8, 1726–1737.",
@@ -28,6 +30,8 @@ FACULTY_BASE = [
     },
     {
         "id": "leehe-peled-avron",
+        "key_work": 0,
+        "key_award": 0,
         "initials": "LP",
         "works": [
             "Peled-Avron, L., Abu-Akel, A., &amp; Shamay-Tsoory, S. (2020). Exogenous effects of oxytocin in five psychiatric disorders: A systematic review and meta-analyses. <em>Neuroscience &amp; Biobehavioral Reviews</em>, 114, 70–95.",
@@ -44,6 +48,8 @@ FACULTY_BASE = [
     },
     {
         "id": "gil-diesendruck",
+        "key_work": 0,
+        "key_award": 0,
         "initials": "GD",
         "works": [
             "Diesendruck, G., &amp; Markson, L. (2001). Children's avoidance of lexical overlap: A pragmatic account. <em>Developmental Psychology</em>, 37(5), 630–641.",
@@ -60,6 +66,8 @@ FACULTY_BASE = [
     },
     {
         "id": "avi-goldstein",
+        "key_work": 2,
+        "key_award": 0,
         "initials": "AG",
         "works": [
             "Goldstein, A., Spencer, K. M., &amp; Donchin, E. (2002). The influence of stimulus deviance and novelty on the P300 and Novelty P3. <em>Psychophysiology</em>, 39(6), 781–790.",
@@ -76,6 +84,8 @@ FACULTY_BASE = [
     },
     {
         "id": "ilanit-gordon",
+        "key_work": 0,
+        "key_award": 0,
         "initials": "IG",
         "works": [
             "Gordon, I., Zagoory-Sharon, O., Leckman, J. F., &amp; Feldman, R. (2010). Oxytocin and the development of parenting in humans. <em>Biological Psychiatry</em>, 68(4), 377–382.",
@@ -92,6 +102,8 @@ FACULTY_BASE = [
     },
     {
         "id": "david-anaki",
+        "key_work": 4,
+        "key_award": 0,
         "initials": "DA",
         "works": [
             "Anaki, D., Faran, Y., &amp; Henik, A. (1998). Cerebral hemispheric asymmetries in processing lexical metaphors. <em>Neuropsychologia</em>, 36(7), 691–700.",
@@ -150,8 +162,9 @@ FACULTY_TEXT = {
         "avi-goldstein": {
             "name": "Abraham (Avi) Goldstein",
             "role": "Professor, Department of Psychology · Head of the MEG Laboratory, Gonda Multidisciplinary Brain Research Center",
-            "summary": "Uses magnetoencephalography and EEG to track fast brain oscillations and connectivity during perception, language, emotion and self-related processing, from meditation and mortality salience to how listeners’ brains synchronize with a charismatic speaker, and applies these tools to autism, PTSD, ADHD and schizophrenia. He heads Israel’s only MEG facility.",
+            "summary": "Uses magnetoencephalography and EEG to track fast brain oscillations and connectivity during perception, language, emotion and self-related processing, from meditation and mortality salience to how listeners’ brains synchronize with a charismatic speaker, and applies these tools to autism, PTSD, ADHD and schizophrenia.",
             "awards": [],
+            "highlight": "Heads Israel’s only MEG facility, the Electromagnetic Brain Imaging Unit of the Gonda Center",
         },
         "ilanit-gordon": {
             "name": "Ilanit Gordon",
@@ -211,8 +224,9 @@ FACULTY_TEXT = {
         "avi-goldstein": {
             "name": "אברהם (אבי) גולדשטיין",
             "role": "פרופסור מן המניין, המחלקה לפסיכולוגיה · ראש מעבדת ה-MEG, המרכז הרב-תחומי לחקר המוח ע״ש גונדה",
-            "summary": "משתמש במגנטואנצפלוגרפיה וב-EEG כדי לעקוב אחר תנודות מוחיות מהירות וקישוריות במהלך תפיסה, שפה, רגש ועיבוד הקשור לעצמי, ממדיטציה ומודעות למוות ועד לסנכרון מוחי בין מאזינים לדובר כריזמטי, ומיישם כלים אלה בחקר אוטיזם, פוסט-טראומה, ADHD וסכיזופרניה. עומד בראש מתקן ה-MEG היחיד בישראל.",
+            "summary": "משתמש במגנטואנצפלוגרפיה וב-EEG כדי לעקוב אחר תנודות מוחיות מהירות וקישוריות במהלך תפיסה, שפה, רגש ועיבוד הקשור לעצמי, ממדיטציה ומודעות למוות ועד לסנכרון מוחי בין מאזינים לדובר כריזמטי, ומיישם כלים אלה בחקר אוטיזם, פוסט-טראומה, ADHD וסכיזופרניה.",
             "awards": [],
+            "highlight": "עומד בראש מתקן ה-MEG היחיד בישראל, היחידה לדימות מוחי אלקטרומגנטי של מרכז גונדה",
         },
         "ilanit-gordon": {
             "name": "אילנית גורדון",
@@ -252,6 +266,9 @@ def faculty_members(lang):
             "summary": t["summary"],
             "works": base["works"],
             "awards": t["awards"],
+            "key_work": base.get("key_work", 0),
+            "key_award": base.get("key_award", 0),
+            "highlight": t.get("highlight", ""),
             "links": [{"label": labels[k], "url": u, "primary": p} for k, u, p in base["links"]],
         })
     return out
@@ -322,6 +339,7 @@ EN = {
     "brand": {"mark": "Ψ", "name": "PAKRAM", "sub": "Psychology, Cognition, Emotion & Brain · Bar-Ilan University"},
     "nav": [
         ("about", "About"),
+        ("multidisciplinary", "Our Approach"),
         ("pathways", "Pathways"),
         ("computational-psychiatry", "Computational Psychiatry"),
         ("emotion-ai", "Emotion & AI"),
@@ -339,7 +357,7 @@ EN = {
             ("2 years", "Research M.A. with thesis"),
             ("2 days / week", "Intensive on-campus days"),
             ("85%", "of surveyed graduates hold research positions"),
-            ("MEG · EEG · TMS", "Brain measurement and stimulation on campus"),
+            ("MEG · EEG · TMS · VR", "Brain measurement and stimulation, cutting-edge VR (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>) and computational modelling"),
         ],
     },
     "about": {
@@ -347,11 +365,25 @@ EN = {
         "title": "Psychology, Cognition, Emotion & Brain",
         "paras": [
             "PAKRAM (<span class=\"ltr\" lang=\"he\">פק״רם</span>) is the Hebrew acronym for <em>Psychology, Cognition, Emotion and Brain</em>, the research-oriented M.A. track of the Department of Psychology at Bar-Ilan University. Cognitive, emotional and behavioral processes in the brain unfold in continuous interaction, and together they drive human behavior. The division studies those links in depth, from basic theory to applied research.",
-            "Students learn to record brain activity in real time, analyze physiological responses and run behavioral experiments with modern sensing technologies, including eye tracking, EEG and MEG, brain stimulation (TMS and tDCS) and electrophysiological recording. Every student completes a thesis in a department lab under the close supervision of a faculty member, and many take part in research projects with partner hospitals and research institutes.",
+            "Students learn to record brain activity in real time, analyze physiological responses and run behavioral experiments with modern sensing technologies, including eye tracking, EEG and MEG, brain stimulation (TMS and tDCS), electrophysiological recording, cutting-edge virtual reality with the <a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a> headset, and computational modelling. Every student completes a thesis in a department lab under the close supervision of a faculty member, and many take part in research projects with partner hospitals and research institutes.",
             "What makes the division distinctive is the pairing of rigorous measurement with formal modeling. Alongside classic cognitive neuroscience, our faculty bring computational psychiatry, social neuroscience, developmental science and the study of emotion into a single program, and increasingly ask what a science of the human mind can teach the people who build artificial intelligence.",
         ],
         "pills_label": "Research areas",
         "pills": ["Cognitive neuroscience", "Computational psychiatry", "Social & affective neuroscience", "Developmental science", "Neuropsychology", "Psychobiology", "Emotion & AI"],
+    },
+    "multi": {
+        "kicker": "Our approach",
+        "title": "Why multidisciplinary science is the route to mechanism",
+        "paras": [
+            "The division's defining commitment is that rigorous, mechanistic models of how humans think and feel cannot be built from inside a single discipline. A mechanism is a claim about how parts interact to produce a phenomenon, and the parts of human thought and feeling live at different levels: ion channels and brain rhythms, learning rules and value computations, developing concepts, bodies in contact, and the social groups that shape all of them. A model that explains anxiety only at the level of oscillations, or only at the level of beliefs, is not yet a mechanism.",
+            "That is why the division deliberately brings computational psychiatry, magnetoencephalography and electrophysiology, developmental science, social neuroscience, neuropsychology and pharmacology into one program. Formal models give neural data a hypothesis to test; neural data constrain models that would otherwise fit behavior equally well; developmental and social perspectives reveal where a mechanism comes from and what it is for. Each discipline supplies a check on the others, and the result is explanation that is both precise and faithful to the complexity of a human life.",
+            "For students, this means learning to move between levels: to write a reinforcement-learning model in the morning, analyze MEG source estimates in the afternoon, and ask in a seminar how both bear on a clinical question or on the design of an artificial agent. This fluency is what separates a scientist who can build a mechanism from one who can only describe a correlation, and it is equally valuable in a research lab, a clinic or an R&amp;D team.",
+        ],
+        "pillars": [
+            {"title": "Measure", "text": "Record the brain and body directly: MEG and EEG oscillations, brain stimulation, eye tracking, hormones and physiology, and immersive virtual reality that places people in controlled yet lifelike situations."},
+            {"title": "Model", "text": "Turn verbal theories into equations: reinforcement learning, Bayesian and active inference, and machine learning that make quantitative predictions about choices and neural signals."},
+            {"title": "Situate", "text": "Ask where a mechanism comes from and what it does in the world: in childhood, in the dyad and the group, in clinical conditions, and in artificial agents."},
+        ],
     },
     "pathways": {
         "kicker": "Two pathways, one training",
@@ -412,8 +444,8 @@ EN = {
     "faculty": {
         "kicker": "Faculty",
         "title": "Meet the professors",
-        "lede": "Six principal investigators span computational psychiatry, social and affective neuroscience, magnetoencephalography, developmental science and the neuropsychology of perception and memory. Each supervises M.A. theses in the division.",
-        "labels": {"works": "Selected works", "awards": "Grants & awards"},
+        "lede": "Six principal investigators span computational psychiatry, social and affective neuroscience, magnetoencephalography, developmental science and the neuropsychology of perception and memory. Each supervises M.A. theses in the division. Open a card to read more about their work.",
+        "labels": {"key_work": "Key publication", "award": "Award", "highlight": "Highlight", "read_more": "Read more", "show_less": "Show less", "more_works": "More selected works", "more_awards": "More grants & awards"},
         "members": faculty_members("en"),
     },
     "path": {
@@ -431,7 +463,7 @@ EN = {
             {"icon": "meg", "title": "MEG analysis practicum", "text": "Hands-on training in magnetoencephalography at the Gonda Multidisciplinary Brain Research Center, from data acquisition to source-level analysis of brain oscillations.",
              "bullets": ["Preprocessing and artifact rejection", "Time-frequency and source analysis (e.g., MNE-Python)", "Experimental design for MEG and EEG"]},
             {"icon": "tools", "title": "Cutting-edge tools", "text": "A rotating practicum in the methods that define contemporary cognitive and social neuroscience.",
-             "bullets": ["Eye tracking, EEG, TMS and tDCS", "Interpersonal synchrony and physiological recording", "Machine learning for behavioral and neural data"]},
+             "bullets": ["Eye tracking, EEG, TMS and tDCS", "Immersive virtual reality (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>)", "Computational modelling and machine learning for behavioral and neural data", "Interpersonal synchrony and physiological recording"]},
         ],
     },
     "apply": {
@@ -481,6 +513,7 @@ HE = {
     "brand": {"mark": "Ψ", "name": "פק״רם", "sub": "פסיכולוגיה, קוגניציה, רגש ומוח · אוניברסיטת בר-אילן"},
     "nav": [
         ("about", "על המסלול"),
+        ("multidisciplinary", "הגישה שלנו"),
         ("pathways", "מסלולי קריירה"),
         ("computational-psychiatry", "פסיכיאטריה חישובית"),
         ("emotion-ai", "רגש ובינה מלאכותית"),
@@ -498,7 +531,7 @@ HE = {
             ("שנתיים", "תואר שני מחקרי עם תזה"),
             ("יומיים בשבוע", "ימי לימוד מרוכזים בקמפוס"),
             ("85%", "מהבוגרים שנסקרו מועסקים בתפקידי מחקר"),
-            ("MEG · EEG · TMS", "מדידה וגרייה מוחית בקמפוס"),
+            ("MEG · EEG · TMS · VR", "מדידה וגרייה מוחית, מציאות מדומה בחזית הטכנולוגיה (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>) ומידול חישובי"),
         ],
     },
     "about": {
@@ -506,11 +539,25 @@ HE = {
         "title": "פסיכולוגיה, קוגניציה, רגש ומוח",
         "paras": [
             "פק״רם הם ראשי התיבות של <em>פסיכולוגיה, קוגניציה, רגש ומוח</em>, המסלול המחקרי לתואר שני במחלקה לפסיכולוגיה באוניברסיטת בר-אילן. תהליכים קוגניטיביים, רגשיים והתנהגותיים במוח מתקיימים באינטראקציה רציפה, ויחד הם מכוונים את ההתנהגות האנושית. המסלול מעמיק בקשרים האלה, מן התיאוריה הבסיסית ועד למחקר היישומי.",
-            "הסטודנטיות והסטודנטים לומדים למדוד פעילות מוחית בזמן אמת, לנתח תגובות פיזיולוגיות ולבצע ניסויים התנהגותיים באמצעות טכנולוגיות חישה מתקדמות: מעקב עיניים, EEG ו-MEG, גרייה מוחית (TMS ו-tDCS) ורישום אלקטרופיזיולוגי. כל סטודנט משלים עבודת תזה באחת ממעבדות המחלקה בהנחיה צמודה של חבר סגל, ורבים משתתפים בפרויקטי מחקר עם בתי חולים ומכוני מחקר שותפים.",
+            "הסטודנטיות והסטודנטים לומדים למדוד פעילות מוחית בזמן אמת, לנתח תגובות פיזיולוגיות ולבצע ניסויים התנהגותיים באמצעות טכנולוגיות חישה מתקדמות: מעקב עיניים, EEG ו-MEG, גרייה מוחית (TMS ו-tDCS), רישום אלקטרופיזיולוגי, מציאות מדומה בחזית הטכנולוגיה עם קסדת <a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>, ומידול חישובי. כל סטודנט משלים עבודת תזה באחת ממעבדות המחלקה בהנחיה צמודה של חבר סגל, ורבים משתתפים בפרויקטי מחקר עם בתי חולים ומכוני מחקר שותפים.",
             "הייחוד של המסלול הוא השילוב בין מדידה קפדנית לבין מידול פורמלי. לצד מדעי המוח הקוגניטיביים הקלאסיים, סגל המסלול מביא לתוכנית אחת פסיכיאטריה חישובית, נוירו-מדע חברתי, מדעי ההתפתחות וחקר הרגש, ושואל יותר ויותר מה יכול מדע הנפש האנושית ללמד את מי שבונים בינה מלאכותית.",
         ],
         "pills_label": "תחומי מחקר",
         "pills": ["מדעי המוח הקוגניטיביים", "פסיכיאטריה חישובית", "נוירו-מדע חברתי ורגשי", "מדעי ההתפתחות", "נוירופסיכולוגיה", "פסיכוביולוגיה", "רגש ובינה מלאכותית"],
+    },
+    "multi": {
+        "kicker": "הגישה שלנו",
+        "title": "מדוע מדע רב-תחומי הוא הדרך אל המנגנון",
+        "paras": [
+            "המחויבות המגדירה של המסלול היא שמודלים מנגנוניים וקפדניים של האופן שבו בני אדם חושבים ומרגישים אינם יכולים להיבנות מתוך דיסציפלינה אחת. מנגנון הוא טענה על האופן שבו חלקים פועלים זה על זה כדי לייצר תופעה, והחלקים של המחשבה והרגש האנושיים נמצאים ברמות שונות: תעלות יונים ומקצבים מוחיים, כללי למידה וחישובי ערך, מושגים מתפתחים, גופים במגע, והקבוצות החברתיות המעצבות את כולם. מודל שמסביר חרדה רק ברמת התנודות המוחיות, או רק ברמת האמונות, עדיין אינו מנגנון.",
+            "זו הסיבה שהמסלול מאגד במכוון פסיכיאטריה חישובית, מגנטואנצפלוגרפיה ואלקטרופיזיולוגיה, מדעי ההתפתחות, נוירו-מדע חברתי, נוירופסיכולוגיה ופרמקולוגיה בתוכנית אחת. מודלים פורמליים נותנים לנתונים העצביים השערה לבדיקה; נתונים עצביים מגבילים מודלים שאחרת היו מתאימים להתנהגות במידה שווה; נקודות המבט ההתפתחותית והחברתית חושפות מאין מגיע מנגנון ולשם מה הוא קיים. כל דיסציפלינה מספקת בקרה על האחרות, והתוצאה היא הסבר מדויק ונאמן למורכבות של חיי אדם.",
+            "עבור הסטודנטים פירוש הדבר ללמוד לנוע בין רמות: לכתוב מודל של למידת חיזוק בבוקר, לנתח אומדני מקור של MEG אחר הצהריים, ולשאול בסמינר כיצד שניהם נוגעים לשאלה קלינית או לתכנון של סוכן מלאכותי. השליטה הזו היא מה שמבדיל בין מדענית שיכולה לבנות מנגנון לבין מי שיכול רק לתאר מתאם, והיא בעלת ערך שווה במעבדת מחקר, במרפאה או בצוות מו״פ.",
+        ],
+        "pillars": [
+            {"title": "למדוד", "text": "לרשום את המוח והגוף ישירות: תנודות MEG ו-EEG, גרייה מוחית, מעקב עיניים, הורמונים ופיזיולוגיה, ומציאות מדומה סוחפת שמציבה אנשים במצבים מבוקרים אך דמויי-חיים."},
+            {"title": "למדל", "text": "להפוך תיאוריות מילוליות למשוואות: למידת חיזוק, הסקה בייסיאנית והסקה פעילה, ולמידת מכונה שמפיקות תחזיות כמותיות על בחירות ועל אותות עצביים."},
+            {"title": "למקם", "text": "לשאול מאין מגיע מנגנון ומה הוא עושה בעולם: בילדות, בזוג ובקבוצה, במצבים קליניים ובסוכנים מלאכותיים."},
+        ],
     },
     "pathways": {
         "kicker": "שני מסלולים, הכשרה אחת",
@@ -571,8 +618,8 @@ HE = {
     "faculty": {
         "kicker": "סגל",
         "title": "הכירו את חברי הסגל",
-        "lede": "שישה חוקרים ראשיים המכסים פסיכיאטריה חישובית, נוירו-מדע חברתי ורגשי, מגנטואנצפלוגרפיה, מדעי ההתפתחות ונוירופסיכולוגיה של תפיסה וזיכרון. כל אחד מהם מנחה עבודות תזה במסלול.",
-        "labels": {"works": "עבודות נבחרות", "awards": "מענקים ופרסים"},
+        "lede": "שישה חוקרים ראשיים המכסים פסיכיאטריה חישובית, נוירו-מדע חברתי ורגשי, מגנטואנצפלוגרפיה, מדעי ההתפתחות ונוירופסיכולוגיה של תפיסה וזיכרון. כל אחד מהם מנחה עבודות תזה במסלול. פתחו כרטיס כדי לקרוא עוד על עבודתם.",
+        "labels": {"key_work": "פרסום מרכזי", "award": "פרס / מענק", "highlight": "נקודת ציון", "read_more": "קראו עוד", "show_less": "הציגו פחות", "more_works": "עבודות נבחרות נוספות", "more_awards": "מענקים ופרסים נוספים"},
         "members": faculty_members("he"),
     },
     "path": {
@@ -590,7 +637,7 @@ HE = {
             {"icon": "meg", "title": "פרקטיקום בניתוח MEG", "text": "הכשרה מעשית במגנטואנצפלוגרפיה במרכז הרב-תחומי לחקר המוח ע״ש גונדה, מאיסוף הנתונים ועד ניתוח ברמת המקור של תנודות מוחיות.",
              "bullets": ["עיבוד מקדים וניקוי ארטיפקטים", "ניתוח זמן-תדר וניתוח מקורות (למשל ב-MNE-Python)", "תכנון ניסויים ל-MEG ול-EEG"]},
             {"icon": "tools", "title": "כלים בחזית המחקר", "text": "פרקטיקום מתחלף בשיטות המגדירות את מדעי המוח הקוגניטיביים והחברתיים העכשוויים.",
-             "bullets": ["מעקב עיניים, EEG, TMS ו-tDCS", "סנכרון בין-אישי ורישום פיזיולוגי", "למידת מכונה לנתונים התנהגותיים ועצביים"]},
+             "bullets": ["מעקב עיניים, EEG, TMS ו-tDCS", "מציאות מדומה סוחפת (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>)", "מידול חישובי ולמידת מכונה לנתונים התנהגותיים ועצביים", "סנכרון בין-אישי ורישום פיזיולוגי"]},
         ],
     },
     "apply": {
