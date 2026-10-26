@@ -108,7 +108,7 @@ html[dir="rtl"] .kicker { letter-spacing: 0; font-size: .9rem; }
   border-bottom: 1px solid var(--line);
 }
 .hero .wrap { display: grid; gap: 20px; padding-top: 28px; padding-bottom: 44px; align-items: center; }
-@media (min-width: 900px) { .hero .wrap { max-width: 1320px; grid-template-columns: fit-content(840px) 400px; justify-content: start; align-items: center; padding-top: 16px; padding-bottom: 36px; gap: 44px; } }
+@media (min-width: 900px) { .hero .wrap { max-width: 1320px; grid-template-columns: fit-content(840px) 400px; justify-content: center; align-items: center; padding-top: 16px; padding-bottom: 36px; gap: 44px; } }
 @media (min-width: 1240px) { .hero h1 { white-space: nowrap; } }
 .hero h1 { margin-bottom: .35em; font-size: clamp(1.7rem, 3.1vw, 2.4rem); }
 .hero h1 em { font-style: italic; color: var(--accent); }
