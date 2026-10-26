@@ -98,64 +98,74 @@ def scene_drumming() -> str:
 
 
 def scene_rl() -> str:
+    sans = "Heebo, Rubik, system-ui, sans-serif"
     return f"""
 <rect width="128" height="128" fill="{BG}"/>
-<rect x="8" y="30" width="112" height="76" rx="6" fill="#edf2ee" stroke="{GREY}" stroke-width="3"/>
-<path d="M44 30 v30 M44 78 v28 M80 30 v22 M80 70 v36 M8 68 h18" stroke="{GREY}" stroke-width="3" stroke-linecap="round"/>
-<path d="M26 92 q12 -24 36 -24 t36 -22" stroke="{GREEN}" stroke-width="2.2" fill="none" stroke-dasharray="4 3" stroke-linecap="round"/>
-<path d="M92 50 l6 -3 -1 7" stroke="{GREEN}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<ellipse cx="26" cy="92" rx="12" ry="8" fill="#9aa5ae"/>
-<circle cx="37" cy="89" r="6" fill="#9aa5ae"/>
-<circle cx="35" cy="82.5" r="3.2" fill="#f1b8c2" stroke="#9aa5ae" stroke-width="1"/>
-<circle cx="40" cy="88" r="1.3" fill="{INK}"/>
-<circle cx="43.5" cy="90.5" r="1.4" fill="#f1b8c2"/>
-<path d="M14 94 q-9 4 -6 12" stroke="#9aa5ae" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-<path d="M100 32 l4.4 9.2 10 1.4 -7.3 7 1.8 10 -8.9 -4.8 -8.9 4.8 1.8 -10 -7.3 -7 10 -1.4 z" fill="{GOLD}" stroke="#a67a1a" stroke-width="1"/>
-<path d="M106 86 a12 12 0 1 1 -3 -9" stroke="{BLUE}" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-<path d="M104 73 l-1 6 -6 -1" stroke="{BLUE}" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="18" y="8" width="92" height="30" rx="7" fill="#fff" stroke="{GREEN}" stroke-width="2"/>
+<text x="30" y="28" font-size="12.5" font-weight="700" fill="{DEEP}" font-family="{sans}">Agent</text>
+<text x="92" y="32" text-anchor="middle" font-size="24" font-weight="700" fill="{DEEP}" font-family="Frank Ruhl Libre, serif">Ψ</text>
+<path d="M85 31 c8 -2 8 -6 0 -8 c-8 -2 -8 -6 1 -8" stroke="{GOLD}" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+<circle cx="87" cy="14.5" r="1.5" fill="{GOLD}"/>
+<rect x="14" y="90" width="100" height="30" rx="7" fill="#fff" stroke="{GREEN}" stroke-width="2"/>
+<text x="64" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="{DEEP}" font-family="{sans}">Environment</text>
+<path d="M104 38 V84" stroke="{BLUE}" stroke-width="2.2" fill="none"/>
+<path d="M99 79 l5 6 5 -6" stroke="{BLUE}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24 90 V44" stroke="{GREEN}" stroke-width="2.2" fill="none"/>
+<path d="M19 49 l5 -6 5 6" stroke="{GREEN}" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="97" y="52" text-anchor="end" font-size="10.5" font-style="italic" fill="{BLUE}" font-family="{sans}">a</text>
+<text x="31" y="52" font-size="10.5" font-style="italic" fill="{GREEN}" font-family="{sans}">s, r</text>
+<text x="64" y="68" text-anchor="middle" font-size="10.5" font-style="italic" fill="{INK}" font-family="{sans}">δ = r + γV(s′) − V(s)</text>
+<text x="64" y="81" text-anchor="middle" font-size="9.5" font-style="italic" fill="{INK}" font-family="{sans}">V(s) ← V(s) + αδ</text>
 """
 
 
-def scene_language() -> str:
-    l1 = [(16, 36), (16, 58), (16, 80)]
-    l2 = [(34, 28), (34, 48), (34, 68), (34, 88)]
-    l3 = [(52, 44), (52, 72)]
-    edges = []
-    for a in l1:
-        for b in l2:
-            edges.append(f'<line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}"/>')
-    for a in l2:
-        for b in l3:
-            edges.append(f'<line x1="{a[0]}" y1="{a[1]}" x2="{b[0]}" y2="{b[1]}"/>')
-    nodes = "".join(f'<circle cx="{x}" cy="{y}" r="3.8" fill="{BLUE}"/>' for x, y in l1 + l2 + l3)
+def scene_language(word: str) -> str:
+    sans = "Heebo, Rubik, system-ui, sans-serif"
     return f"""
 <rect width="128" height="128" fill="{BG}"/>
-<rect x="0" width="64" height="128" fill="#eef3f7"/>
-<rect x="63" y="10" width="2" height="108" fill="{LIGHT}"/>
-<g stroke="#9bb3cc" stroke-width="1.1">{''.join(edges)}</g>
-{nodes}
-<path d="M30 96 h22 a3 3 0 0 1 3 3 v10 a3 3 0 0 1 -3 3 h-11 l-5 5 v-5 h-6 a3 3 0 0 1 -3 -3 v-10 a3 3 0 0 1 3 -3 z" fill="#fff" stroke="{GREY}" stroke-width="1.3"/>
-<path d="M41 99.5 l4.5 8 h-9 z" fill="{BLUE}"/>
-<rect y="110" x="64" width="64" height="18" fill="{FLOOR}"/>
-<circle cx="96" cy="54" r="16" fill="{SKIN}"/>
-<path d="M95 38 q3 -9 9 -3" stroke="{HAIR}" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-<circle cx="90" cy="54" r="2.1" fill="{INK}"/><circle cx="102" cy="54" r="2.1" fill="{INK}"/>
-<path d="M91 61 q5 4 10 0" stroke="{INK}" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-<circle cx="85" cy="59" r="2.6" fill="#f4a3a3" opacity=".7"/><circle cx="107" cy="59" r="2.6" fill="#f4a3a3" opacity=".7"/>
-<path d="M80 110 V88 a16 14 0 0 1 32 0 v22 z" fill="{APPLE}"/>
-<path d="M82 92 l-10 10 M110 92 l10 10" stroke="{SKIN}" stroke-width="5" stroke-linecap="round"/>
-<rect x="68" y="104" width="14" height="14" rx="2" fill="#fff" stroke="{GREY}" stroke-width="1.4"/><circle cx="75" cy="111" r="3.6" fill="{GREEN}"/>
-<rect x="88" y="104" width="14" height="14" rx="2" fill="#fff" stroke="{GREY}" stroke-width="1.4"/><path d="M95 106.5 l4.6 8 h-9.2 z" fill="{BLUE}"/>
-<rect x="108" y="104" width="14" height="14" rx="2" fill="#fff" stroke="{GREY}" stroke-width="1.4"/><rect x="111.5" y="107.5" width="7" height="7" fill="{GOLD}"/>
-<path d="M104 22 h18 a3 3 0 0 1 3 3 v11 a3 3 0 0 1 -3 3 h-9 l-4 4 v-4 h-5 a3 3 0 0 1 -3 -3 v-11 a3 3 0 0 1 3 -3 z" fill="#fff" stroke="{GREY}" stroke-width="1.3"/>
-<path d="M113 25.5 l4.5 8 h-9 z" fill="{BLUE}"/>
+<rect y="106" width="128" height="22" fill="{FLOOR}"/>
+<ellipse cx="92" cy="78" rx="33" ry="30" fill="#fff" stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="4 3"/>
+<circle cx="28" cy="58" r="13" fill="{SKIN}"/>
+<path d="M15 56 a13 13 0 0 1 26 0 v-4 a13 8 0 0 0 -26 0 z" fill="{HAIR}"/>
+<circle cx="23.5" cy="59" r="1.7" fill="{INK}"/><circle cx="32.5" cy="59" r="1.7" fill="{INK}"/>
+<path d="M24 65 q4 3 8 0" stroke="{INK}" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<path d="M12 106 V84 a16 16 0 0 1 32 0 v22 z" fill="{APPLE}"/>
+<path d="M40 84 l20 -12" stroke="{SKIN}" stroke-width="5" stroke-linecap="round"/>
+<circle cx="61" cy="71" r="3" fill="{SKIN}"/>
+<path d="M28 12 h34 a4 4 0 0 1 4 4 v13 a4 4 0 0 1 -4 4 h-18 l-6 6 v-6 h-10 a4 4 0 0 1 -4 -4 v-13 a4 4 0 0 1 4 -4 z" fill="#fff" stroke="{GREY}" stroke-width="1.4"/>
+<text x="45" y="26" text-anchor="middle" font-size="11.5" font-weight="700" fill="{DEEP}" font-family="{sans}">{word}</text>
+<path d="M66 22 q24 4 26 28" stroke="{BLUE}" stroke-width="1.3" fill="none" stroke-dasharray="3 2"/>
+<path d="M66 24 q10 30 6 56" stroke="{BLUE}" stroke-width="1.3" fill="none" stroke-dasharray="3 2"/>
+<path d="M66 22 q40 10 40 60" stroke="{BLUE}" stroke-width="1.3" fill="none" stroke-dasharray="3 2"/>
+<rect x="78" y="54" width="26" height="13" rx="6.5" fill="#a0683a"/>
+<circle cx="106" cy="56" r="6.5" fill="#a0683a"/>
+<ellipse cx="102.5" cy="51" rx="2.3" ry="3.8" fill="#7a4a24"/>
+<circle cx="108.5" cy="55" r="1.1" fill="{INK}"/>
+<circle cx="111" cy="58" r="1.3" fill="{INK}"/>
+<path d="M78 58 l-6 -5" stroke="#a0683a" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="81" y="66" width="3.2" height="7" fill="#a0683a"/><rect x="97" y="66" width="3.2" height="7" fill="#a0683a"/>
+<rect x="64" y="86" width="20" height="10" rx="5" fill="#fff" stroke="{INK}" stroke-width="1.1"/>
+<circle cx="85" cy="87" r="5" fill="#fff" stroke="{INK}" stroke-width="1.1"/>
+<ellipse cx="82" cy="84" rx="1.6" ry="3" fill="{INK}"/>
+<circle cx="72" cy="90" r="2.2" fill="{INK}"/><circle cx="79" cy="92" r="1.6" fill="{INK}"/>
+<circle cx="87" cy="86" r=".9" fill="{INK}"/>
+<rect x="66" y="95" width="2.6" height="6" fill="{INK}"/><rect x="78" y="95" width="2.6" height="6" fill="{INK}"/>
+<rect x="96" y="88" width="17" height="9" rx="4.5" fill="{INK}"/>
+<circle cx="114" cy="88" r="4.5" fill="{INK}"/>
+<ellipse cx="111" cy="84.5" rx="1.5" ry="2.6" fill="{INK}"/>
+<circle cx="115.8" cy="87" r=".9" fill="#fff"/>
+<path d="M96 91 l-5 -3" stroke="{INK}" stroke-width="2" stroke-linecap="round"/>
+<rect x="98" y="96" width="2.6" height="6" fill="{INK}"/><rect x="108" y="96" width="2.6" height="6" fill="{INK}"/>
 """
 
 
-def hero_art(aria_label: str) -> str:
+def hero_art(lang: str, aria_label: str) -> str:
     cx, cy, R, NR = 300, 300, 196, 70
     angles = [-90, -18, 54, 126, 198]
-    scenes = [scene_meg(), scene_drumming(), scene_rl(), scene_language(), scene_touch_fmri()]
+    word = "כלב" if lang == "he" else "dog"
+    centre = "פק״רם" if lang == "he" else "PAKRAM"
+    centre_font = "Rubik, Heebo, sans-serif" if lang == "he" else "Frank Ruhl Libre, serif"
+    scenes = [scene_meg(), scene_drumming(), scene_rl(), scene_language(word), scene_touch_fmri()]
     nodes = [(cx + R * math.cos(math.radians(a)), cy + R * math.sin(math.radians(a))) for a in angles]
     k = (2 * NR) / 128  # scale a 128px scene to the medallion diameter
     out = [f'<svg viewBox="0 0 600 600" role="img" aria-label="{aria_label}" xmlns="http://www.w3.org/2000/svg">']
@@ -168,8 +178,9 @@ def hero_art(aria_label: str) -> str:
     spokes = "".join(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}"/>' for x, y in nodes)
     out.append(f'<g stroke="#c3dc87" stroke-width="2" stroke-dasharray="3 6">{spokes}</g>')
     out.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="{GREEN}" stroke-width="3"/>')
-    out.append(f'<circle cx="{cx}" cy="{cy}" r="54" fill="#e7f2d3" stroke="{APPLE}" stroke-width="2"/>')
-    out.append(f'<text x="{cx}" y="{cy + 24}" text-anchor="middle" font-family="Frank Ruhl Libre, Rubik, serif" font-weight="700" font-size="68" fill="{DEEP}">Ψ</text>')
+    out.append(f'<circle cx="{cx}" cy="{cy}" r="62" fill="#e7f2d3" stroke="{APPLE}" stroke-width="2"/>')
+    spacing = "" if lang == "he" else ' letter-spacing="1"'
+    out.append(f'<text x="{cx}" y="{cy + 9}" text-anchor="middle" direction="{"rtl" if lang == "he" else "ltr"}" font-family="{centre_font}" font-weight="700" font-size="{30 if lang == "he" else 27}"{spacing} fill="{DEEP}">{centre}</text>')
     for (x, y), scene in zip(nodes, scenes):
         out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{NR + 3}" fill="#fff" stroke="{GREEN}" stroke-width="3"/>')
         out.append(f'<g transform="translate({x - NR:.1f},{y - NR:.1f}) scale({k:.4f})" clip-path="url(#medal)">{scene}</g>')

@@ -165,7 +165,7 @@ def render_page(lang: str) -> str:
         <a class="btn btn-secondary" href="#apply">{esc(c["hero"]["cta_secondary"])}</a>
       </div>
     </div>
-    <div class="hero-art">{hero_art(esc(c["hero"]["ring"]["aria"]))}</div>
+    <div class="hero-art">{hero_art(lang, esc(c["hero"]["ring"]["aria"]))}</div>
   </div>
 </section>
 <div class="wrap facts-wrap">
