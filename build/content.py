@@ -378,6 +378,7 @@ EN = {
     "menu_label": "Open menu",
     "brand": {"mark": "Ψ", "name": "PAKRAM", "sub": "Psychology, Cognition, Emotion & Brain · Bar-Ilan University"},
     "nav": [
+        ("top", "Home"),
         ("about", "About"),
         ("multidisciplinary", "Our Approach"),
         ("pathways", "Pathways"),
@@ -396,13 +397,16 @@ EN = {
         "facts": [
             ("2 years", "Research M.A. with thesis"),
             ("2 days / week", "Intensive on-campus days"),
-            ("85%", "of surveyed graduates hold research positions"),
-            ("MEG · EEG · TMS · VR", "Brain measurement and stimulation, cutting-edge VR (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>) and computational modelling"),
+            ("85%", "of graduates in research roles"),
+            ("MEG · EEG · VR", "Neuroimaging and immersive VR (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>)"),
         ],
-        "distinctions": {
-            "label": "Why PAKRAM",
-            "text": "Our faculty hold <em>European Research Council (ERC) Starting and Consolidator</em> grants and an <em>Israel Science Foundation Bereshit</em> grant, run <em>Israel's only MEG laboratory</em>, and publish in <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> and <em>Neuroscience &amp; Biobehavioral Reviews</em>.",
-        },
+        "awards_label": "Faculty distinctions",
+        "awards": [
+            ("ERC", "Starting and Consolidator grants"),
+            ("ISF Bereshit", "Early-career research grant"),
+            ("Only MEG lab", "in Israel"),
+            ("6 top journals", "Psych Review · TiCS · NHB · Nat Commun · Psych Sci · NBR"),
+        ],
     },
     "about": {
         "kicker": "About the division",
@@ -546,6 +550,7 @@ HE = {
     "menu_label": "פתיחת תפריט",
     "brand": {"mark": "Ψ", "name": "פק״רם", "sub": "פסיכולוגיה, קוגניציה, רגש ומוח · אוניברסיטת בר-אילן"},
     "nav": [
+        ("top", "דף הבית"),
         ("about", "על המסלול"),
         ("multidisciplinary", "הגישה שלנו"),
         ("pathways", "מסלולי קריירה"),
@@ -564,13 +569,16 @@ HE = {
         "facts": [
             ("שנתיים", "תואר שני מחקרי עם תזה"),
             ("יומיים בשבוע", "ימי לימוד מרוכזים בקמפוס"),
-            ("85%", "מהבוגרים שנסקרו מועסקים בתפקידי מחקר"),
-            ("MEG · EEG · TMS · VR", "מדידה וגרייה מוחית, מציאות מדומה בחזית הטכנולוגיה (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>) ומידול חישובי"),
+            ("85%", "מהבוגרים בתפקידי מחקר"),
+            ("MEG · EEG · VR", "דימות מוחי ומציאות מדומה סוחפת (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>)"),
         ],
-        "distinctions": {
-            "label": "למה פק״רם",
-            "text": "חברי הסגל שלנו זוכי מענקי <em>ERC Starting ו-ERC Consolidator של מועצת המחקר האירופית</em> ומענק <em>«בראשית» של הקרן הלאומית למדע</em>, מפעילים את <em>מעבדת ה-MEG היחידה בישראל</em>, ומפרסמים בכתבי העת <em>Psychological Review</em>, <em>Trends in Cognitive Sciences</em>, <em>Nature Human Behaviour</em>, <em>Nature Communications</em>, <em>Psychological Science</em> ו-<em>Neuroscience &amp; Biobehavioral Reviews</em>.",
-        },
+        "awards_label": "הישגי הסגל",
+        "awards": [
+            ("ERC", "מענקי Starting ו-Consolidator"),
+            ("ISF בראשית", "מענק מחקר לחוקרים צעירים"),
+            ("מעבדת ה-MEG היחידה", "בישראל"),
+            ("6 כתבי עת מובילים", "Psych Review · TiCS · NHB · Nat Commun · Psych Sci · NBR"),
+        ],
     },
     "about": {
         "kicker": "על המסלול",

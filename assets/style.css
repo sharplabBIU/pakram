@@ -76,7 +76,7 @@ html[dir="rtl"] .kicker { letter-spacing: 0; font-size: .9rem; }
 .brand-text small { font-weight: 500; color: var(--ink-3); font-size: .78rem; display: none; }
 @media (min-width: 600px) { .brand-text small { display: block; } }
 .nav { display: none; margin-inline-start: auto; gap: 4px; }
-.nav a { color: var(--ink-2); font-weight: 500; font-size: .9rem; padding: 8px 8px; border-radius: 8px; white-space: nowrap; }
+.nav a { color: var(--ink-2); font-weight: 500; font-size: .88rem; padding: 8px 7px; border-radius: 8px; white-space: nowrap; }
 .nav a:hover { background: var(--bg-soft); text-decoration: none; color: var(--ink); }
 @media (min-width: 1180px) { .nav { display: flex; } }
 
@@ -101,7 +101,7 @@ html[dir="rtl"] .kicker { letter-spacing: 0; font-size: .9rem; }
 
 /* Hero */
 .hero {
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; scroll-margin-top: 70px;
   background: radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
               radial-gradient(900px 500px at -10% 110%, color-mix(in srgb, var(--teal) 20%, transparent), transparent 60%),
               var(--bg);
@@ -125,13 +125,13 @@ html[dir="rtl"] .kicker { letter-spacing: 0; font-size: .9rem; }
 
 .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 @media (min-width: 720px) { .facts { grid-template-columns: repeat(4, 1fr); } }
-.fact { background: var(--bg-elev); padding: 18px 18px; }
-.fact b { display: block; font-family: var(--font-display); font-size: 1.6rem; color: var(--navy); line-height: 1.1; }
-.fact span { color: var(--ink-2); font-size: .92rem; }
+.fact { background: var(--bg-elev); padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; min-height: 72px; }
+.fact b { display: block; font-family: var(--font-display); font-size: 1.3rem; color: var(--navy); line-height: 1.15; }
+.fact span { color: var(--ink-2); font-size: .84rem; line-height: 1.35; }
 .facts-wrap { margin-top: -28px; position: relative; z-index: 2; }
 
 /* Sections */
-section.block { padding: 72px 0; }
+section.block { padding: 72px 0; scroll-margin-top: 70px; }
 section.block + section.block { border-top: 1px solid var(--line); }
 section.alt { background: var(--bg-soft); }
 .section-head { max-width: 72ch; margin-bottom: 32px; }
@@ -245,14 +245,6 @@ html[dir="rtl"] .prof .key dd.pubs { direction: ltr; text-align: left; }
 .prof details h4 { margin-top: .9em; }
 .fact a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 
-/* Distinctions line under the facts strip */
-.distinctions { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; padding: 16px 20px; border: 1px solid var(--line); border-inline-start: 4px solid var(--navy-2); border-radius: var(--radius); background: var(--bg-elev); box-shadow: var(--shadow); }
-@media (min-width: 720px) { .distinctions { flex-direction: row; align-items: flex-start; gap: 18px; } }
-.distinctions .label { flex: none; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); padding-top: 5px; white-space: nowrap; }
-html[dir="rtl"] .distinctions .label { letter-spacing: 0; font-size: .88rem; }
-.distinctions p { margin: 0; color: var(--ink-2); font-size: .97rem; line-height: 1.6; }
-.distinctions em { font-style: normal; font-weight: 600; color: var(--ink); }
-
 /* Faculty cards: never wider than the viewport on phones */
 .prof { min-width: 0; }
 .prof > div { min-width: 0; }
@@ -273,3 +265,10 @@ html[dir="rtl"] .distinctions .label { letter-spacing: 0; font-size: .88rem; }
 html[dir="rtl"] .direction .who { letter-spacing: 0; font-size: .84rem; }
 .direction h3 { font-size: 1.2rem; margin-bottom: .4em; }
 .direction p { margin: 0; color: var(--ink-2); font-size: .96rem; }
+
+/* Awards row: same grid as the facts, in contrasting Bar-Ilan green */
+.facts-awards { margin-top: 12px; background: #0b4f33; border-color: #0b4f33; }
+.facts-awards .fact { background: var(--navy); }
+.facts-awards .fact b { color: #c3dc87; }
+.facts-awards .fact span { color: rgba(255,255,255,.88); }
+.facts-awards .fact a { color: #c3dc87; }

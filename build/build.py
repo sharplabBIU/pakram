@@ -120,6 +120,7 @@ def render_page(lang: str) -> str:
     dir_attr = "rtl" if lang == "he" else "ltr"
     nav_links = "".join(f'<a href="#{esc(h)}">{esc(t)}</a>' for h, t in c["nav"])
     facts = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{t}</span></div>' for n, t in c["hero"]["facts"])
+    awards = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{esc(t)}</span></div>' for n, t in c["hero"]["awards"])
     pills = "".join(f"<li>{esc(p)}</li>" for p in c["about"]["pills"])
 
     def paras(ps):
@@ -182,7 +183,7 @@ def render_page(lang: str) -> str:
 </header>
 
 <main id="main">
-<section class="hero">
+<section class="hero" id="top">
   <div class="wrap">
     <div>
       <span class="kicker">{esc(c["hero"]["kicker"])}</span>
@@ -198,7 +199,8 @@ def render_page(lang: str) -> str:
 </section>
 <div class="wrap facts-wrap">
   <div class="facts">{facts}</div>
-  <div class="distinctions"><span class="label">{esc(c["hero"]["distinctions"]["label"])}</span><p>{c["hero"]["distinctions"]["text"]}</p></div>
+  <h2 class="sr-only">{esc(c["hero"]["awards_label"])}</h2>
+  <div class="facts facts-awards">{awards}</div>
 </div>
 
 <section class="block" id="about">
