@@ -119,7 +119,7 @@ def render_page(lang: str) -> str:
     other_href = "he/" if lang == "en" else "../"
     dir_attr = "rtl" if lang == "he" else "ltr"
     fonts_url = (
-        "https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@700&family=Cousine:wght@700&display=swap"
+        "https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@700&family=Secular+One&display=swap"
         if lang == "he"
         else "https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Heebo:wght@400;500;600;700&family=Fraunces:ital,wght@1,600&family=Space+Grotesk:wght@700&family=JetBrains+Mono:wght@600&display=swap"
     )

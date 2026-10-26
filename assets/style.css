@@ -300,7 +300,7 @@ html[lang="he"] .brand-mark { font-family: "Rubik", sans-serif; }
 /* Hero headline: three words, three faces, three colors */
 .hero h1 .w1 { font-family: "Fraunces", "Frank Ruhl Libre", serif; font-style: italic; font-weight: 600; color: #006937; }
 .hero h1 .w2 { font-family: "Space Grotesk", "Heebo", sans-serif; font-weight: 700; color: #2b5c8a; letter-spacing: -.02em; }
-.hero h1 .w3 { font-family: "JetBrains Mono", "Cousine", monospace; font-weight: 600; color: #a86f0c; font-size: .9em; letter-spacing: -.01em; }
+.hero h1 .w3 { font-family: "JetBrains Mono", monospace; font-weight: 600; color: #a86f0c; font-size: .9em; letter-spacing: -.01em; }
 html[lang="he"] .hero h1 .w1 { font-family: "Frank Ruhl Libre", serif; font-style: normal; font-weight: 700; }
 html[lang="he"] .hero h1 .w2 { font-family: "Rubik", sans-serif; font-weight: 800; letter-spacing: 0; }
-html[lang="he"] .hero h1 .w3 { font-family: "Cousine", monospace; font-weight: 700; font-size: .92em; letter-spacing: 0; }
+html[lang="he"] .hero h1 .w3 { font-family: "Secular One", "Rubik", sans-serif; font-weight: 400; font-size: 1em; letter-spacing: 0; }
