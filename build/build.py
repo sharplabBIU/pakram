@@ -16,12 +16,6 @@ sys.path.insert(0, HERE)
 
 from content import SITE  # noqa: E402
 
-ICONS = {
-    "model": '<svg viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M4 6l5 7 4-4 7 9"/><circle cx="9" cy="13" r="1.4"/><circle cx="13" cy="9" r="1.4"/></svg>',
-    "meg": '<svg viewBox="0 0 24 24"><path d="M3 12h3l2-5 3 10 3-8 2 3h5"/></svg>',
-    "tools": '<svg viewBox="0 0 24 24"><path d="M14.5 5.5a3 3 0 0 0 4 4L21 7l-4-4-2.5 2.5z"/><path d="M14 9l-9 9a2 2 0 0 0 3 3l9-9"/><circle cx="7" cy="19" r="1"/></svg>',
-}
-
 HERO_ART = """
 <svg viewBox="0 0 520 420" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -70,17 +64,6 @@ def esc(s: str) -> str:
 def render_list(items: list[str], cls: str = "") -> str:
     c = f' class="{cls}"' if cls else ""
     return f"<ul{c}>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
-
-
-def render_reading(block: dict) -> str:
-    if not block.get("items"):
-        return ""
-    items = "".join(
-        f'<li>{it["cite"]} <a href="{esc(it["url"])}" target="_blank" rel="noopener">{esc(block["link_label"])}</a></li>'
-        for it in block["items"]
-    )
-    note = f'<p class="note">{block["note"]}</p>' if block.get("note") else ""
-    return f'<div class="reading"><h3>{esc(block["title"])}</h3><ol>{items}</ol>{note}</div>'
 
 
 def render_faculty(members: list[dict], labels: dict) -> str:
@@ -144,7 +127,7 @@ def render_page(lang: str) -> str:
 
     mu = c["multi"]
     pw = c["pathways"]
-    cp = c["comppsych"]
+    dr = c["directions"]
     ea = c["emotion_ai"]
     fa = c["faculty"]
     pa = c["path"]
@@ -153,10 +136,7 @@ def render_page(lang: str) -> str:
 
     pillars = "".join(f'<div class="pillar"><h3>{esc(pl["title"])}</h3><p>{pl["text"]}</p></div>' for pl in mu["pillars"])
     steps = "".join(f'<div class="step"><h3>{esc(s["title"])}</h3><p>{s["text"]}</p></div>' for s in pa["steps"])
-    practica = "".join(
-        f'<div class="practicum"><div class="icon">{ICONS[p["icon"]]}</div><h3>{esc(p["title"])}</h3><p>{p["text"]}</p>{render_list(p["bullets"])}</div>'
-        for p in pa["practica"]
-    )
+    directions = "".join(f'<article class="direction"><span class="who">{esc(d["who"])}</span><h3>{esc(d["title"])}</h3><p>{d["text"]}</p></article>' for d in dr["items"])
     reqs = render_list(ap["reqs"])
     contact_rows = "".join(f"<dt>{esc(k)}</dt><dd>{v}</dd>" for k, v in ap["contact"])
     footer_links = "".join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{esc(t)}</a>' for t, u in ft["links"])
@@ -269,16 +249,14 @@ def render_page(lang: str) -> str:
   </div>
 </section>
 
-<section class="block alt" id="computational-psychiatry">
+<section class="block alt" id="directions">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">{esc(cp["kicker"])}</span>
-      <h2>{esc(cp["title"])}</h2>
+      <span class="kicker">{esc(dr["kicker"])}</span>
+      <h2>{esc(dr["title"])}</h2>
+      <p class="lede">{dr["lede"]}</p>
     </div>
-    <div class="grid-2">
-      <div class="prose">{paras(cp["paras"])}<div class="callout"><p>{cp["callout"]}</p></div></div>
-      <div>{"".join(render_reading(b) for b in cp["reading"])}</div>
-    </div>
+    <div class="directions">{directions}</div>
   </div>
 </section>
 
@@ -288,10 +266,7 @@ def render_page(lang: str) -> str:
       <span class="kicker">{esc(ea["kicker"])}</span>
       <h2>{esc(ea["title"])}</h2>
     </div>
-    <div class="grid-2">
-      <div class="prose">{paras(ea["paras"])}<div class="callout"><p>{ea["callout"]}</p></div></div>
-      <div>{"".join(render_reading(b) for b in ea["reading"])}</div>
-    </div>
+    <div class="prose">{paras(ea["paras"])}</div>
   </div>
 </section>
 
@@ -314,7 +289,6 @@ def render_page(lang: str) -> str:
       <p class="lede">{pa["lede"]}</p>
     </div>
     <div class="steps">{steps}</div>
-    <div class="practica">{practica}</div>
   </div>
 </section>
 

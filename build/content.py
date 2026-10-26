@@ -357,48 +357,6 @@ def faculty_members(lang):
 
 
 # ---------------------------------------------------------------------------
-# Reading lists (verified citations; shown in English in both languages)
-# ---------------------------------------------------------------------------
-
-COMP_PSYCH_READING = [
-    ("Montague, P. R., Dolan, R. J., Friston, K. J., &amp; Dayan, P. (2012). Computational psychiatry. <em>Trends in Cognitive Sciences</em>, 16(1), 72–80.", "https://doi.org/10.1016/j.tics.2011.11.018"),
-    ("Maia, T. V., &amp; Frank, M. J. (2011). From reinforcement learning models to psychiatric and neurological disorders. <em>Nature Neuroscience</em>, 14(2), 154–162.", "https://doi.org/10.1038/nn.2723"),
-    ("Friston, K. J., Stephan, K. E., Montague, R., &amp; Dolan, R. J. (2014). Computational psychiatry: the brain as a phantastic organ. <em>The Lancet Psychiatry</em>, 1(2), 148–158.", "https://doi.org/10.1016/S2215-0366(14)70275-5"),
-    ("Wang, X.-J., &amp; Krystal, J. H. (2014). Computational psychiatry. <em>Neuron</em>, 84(3), 638–654.", "https://doi.org/10.1016/j.neuron.2014.10.018"),
-    ("Huys, Q. J. M., Maia, T. V., &amp; Frank, M. J. (2016). Computational psychiatry as a bridge from neuroscience to clinical applications. <em>Nature Neuroscience</em>, 19(3), 404–413.", "https://doi.org/10.1038/nn.4238"),
-    ("Adams, R. A., Huys, Q. J. M., &amp; Roiser, J. P. (2016). Computational psychiatry: towards a mathematically informed understanding of mental illness. <em>Journal of Neurology, Neurosurgery &amp; Psychiatry</em>, 87(1), 53–63.", "https://doi.org/10.1136/jnnp-2015-310737"),
-    ("Huys, Q. J. M., Browning, M., Paulus, M. P., &amp; Frank, M. J. (2021). Advances in the computational understanding of mental illness. <em>Neuropsychopharmacology</em>, 46(1), 3–19.", "https://doi.org/10.1038/s41386-020-0746-4"),
-    ("Hitchcock, P. F., Fried, E. I., &amp; Frank, M. J. (2022). Computational psychiatry needs time and context. <em>Annual Review of Psychology</em>, 73, 243–270.", "https://doi.org/10.1146/annurev-psych-021621-124910"),
-]
-
-NEUROAI_READING = [
-    ("Hassabis, D., Kumaran, D., Summerfield, C., &amp; Botvinick, M. (2017). Neuroscience-inspired artificial intelligence. <em>Neuron</em>, 95(2), 245–258.", "https://doi.org/10.1016/j.neuron.2017.06.011"),
-    ("Zador, A., Escola, S., Richards, B., et al. (2023). Catalyzing next-generation artificial intelligence through NeuroAI. <em>Nature Communications</em>, 14, 1597.", "https://doi.org/10.1038/s41467-023-37180-x"),
-    ("Richards, B. A., Lillicrap, T. P., et al. (2019). A deep learning framework for neuroscience. <em>Nature Neuroscience</em>, 22(11), 1761–1770.", "https://doi.org/10.1038/s41593-019-0520-2"),
-    ("Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. (2017). Building machines that learn and think like people. <em>Behavioral and Brain Sciences</em>, 40, e253.", "https://doi.org/10.1017/S0140525X16001837"),
-    ("Botvinick, M., Wang, J. X., Dabney, W., Miller, K. J., &amp; Kurth-Nelson, Z. (2020). Deep reinforcement learning and its neuroscientific implications. <em>Neuron</em>, 107(4), 603–616.", "https://doi.org/10.1016/j.neuron.2020.06.014"),
-    ("Saxe, A., Nelli, S., &amp; Summerfield, C. (2021). If deep learning is the answer, what is the question? <em>Nature Reviews Neuroscience</em>, 22(1), 55–67.", "https://doi.org/10.1038/s41583-020-00395-8"),
-    ("Doerig, A., Sommers, R. P., Seeliger, K., et al. (2023). The neuroconnectionist research programme. <em>Nature Reviews Neuroscience</em>, 24(7), 431–450.", "https://doi.org/10.1038/s41583-023-00705-w"),
-    ("Marblestone, A. H., Wayne, G., &amp; Kording, K. P. (2016). Toward an integration of deep learning and neuroscience. <em>Frontiers in Computational Neuroscience</em>, 10, 94.", "https://doi.org/10.3389/fncom.2016.00094"),
-]
-
-EMOTION_AI_READING = [
-    ("Emanuel, A., &amp; Eldar, E. (2023). Emotions as computations. <em>Neuroscience &amp; Biobehavioral Reviews</em>, 144, 104977.", "https://doi.org/10.1016/j.neubiorev.2022.104977"),
-    ("Eldar, E., Rutledge, R. B., Dolan, R. J., &amp; Niv, Y. (2016). Mood as representation of momentum. <em>Trends in Cognitive Sciences</em>, 20(1), 15–24.", "https://doi.org/10.1016/j.tics.2015.07.010"),
-    ("Pessoa, L. (2017). Do intelligent robots need emotion? <em>Trends in Cognitive Sciences</em>, 21(11), 817–819.", "https://doi.org/10.1016/j.tics.2017.06.010"),
-    ("Man, K., &amp; Damasio, A. (2019). Homeostasis and soft robotics in the design of feeling machines. <em>Nature Machine Intelligence</em>, 1(10), 446–452.", "https://doi.org/10.1038/s42256-019-0103-7"),
-    ("Moerland, T. M., Broekens, J., &amp; Jonker, C. M. (2018). Emotion in reinforcement learning agents and robots: a survey. <em>Machine Learning</em>, 107(2), 443–480.", "https://doi.org/10.1007/s10994-017-5666-0"),
-    ("Juechems, K., &amp; Summerfield, C. (2019). Where does value come from? <em>Trends in Cognitive Sciences</em>, 23(10), 836–850.", "https://doi.org/10.1016/j.tics.2019.07.012"),
-    ("Barrett, L. F., Adolphs, R., Marsella, S., Martinez, A. M., &amp; Pollak, S. D. (2019). Emotional expressions reconsidered: Challenges to inferring emotion from human facial movements. <em>Psychological Science in the Public Interest</em>, 20(1), 1–68.", "https://doi.org/10.1177/1529100619832930"),
-    ("Picard, R. W. (1997). <em>Affective Computing</em>. MIT Press.", "https://mitpress.mit.edu/9780262661157/affective-computing/"),
-]
-
-
-def reading(title, items, link_label, note=None):
-    return {"title": title, "link_label": link_label, "note": note, "items": [{"cite": c, "url": u} for c, u in items]}
-
-
-# ---------------------------------------------------------------------------
 # Page copy
 # ---------------------------------------------------------------------------
 
@@ -412,7 +370,7 @@ REGISTRATION = "https://www.biu.ac.il/registration-and-admission/information/reg
 EN = {
     "meta": {
         "title": "PAKRAM · Psychology, Cognition, Emotion & Brain · Bar-Ilan University",
-        "description": "The research M.A. division in Psychology, Cognition, Emotion and Brain at Bar-Ilan University's Department of Psychology: computational psychiatry, MEG, social and affective neuroscience, and the science of emotion for AI. Pathways to industry and academia.",
+        "description": "The research M.A. division in Psychology, Cognition, Emotion and Brain at Bar-Ilan University's Department of Psychology: computational psychiatry, the neuroscience of touch, interpersonal synchrony, the development of beliefs, and MEG. Pathways to industry and academia.",
     },
     "skip": "Skip to content",
     "nav_label": "Main navigation",
@@ -423,8 +381,8 @@ EN = {
         ("about", "About"),
         ("multidisciplinary", "Our Approach"),
         ("pathways", "Pathways"),
-        ("computational-psychiatry", "Computational Psychiatry"),
-        ("emotion-ai", "Emotion & AI"),
+        ("directions", "Current Directions"),
+        ("emotion-ai", "Minds & AI"),
         ("faculty", "Faculty"),
         ("your-path", "Your Path"),
         ("apply", "Apply"),
@@ -452,10 +410,10 @@ EN = {
         "paras": [
             "PAKRAM (<span class=\"ltr\" lang=\"he\">פק״רם</span>) is the Hebrew acronym for <em>Psychology, Cognition, Emotion and Brain</em>, the research-oriented M.A. track of the Department of Psychology at Bar-Ilan University. Cognitive, emotional and behavioral processes in the brain unfold in continuous interaction, and together they drive human behavior. The division studies those links in depth, from basic theory to applied research.",
             "Students learn to record brain activity in real time, analyze physiological responses and run behavioral experiments with modern sensing technologies, including eye tracking, EEG and MEG, brain stimulation (TMS and tDCS), electrophysiological recording, cutting-edge virtual reality with the <a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a> headset, and computational modelling. Every student completes a thesis in a department lab under the close supervision of a faculty member, and many take part in research projects with partner hospitals and research institutes.",
-            "What makes the division distinctive is the pairing of rigorous measurement with formal modeling. Alongside classic cognitive neuroscience, our faculty bring computational psychiatry, social neuroscience, developmental science and the study of emotion into a single program, and increasingly ask what a science of the human mind can teach the people who build artificial intelligence.",
+            "What makes the division distinctive is the pairing of rigorous measurement with formal modeling. Alongside classic cognitive neuroscience, our faculty bring computational psychiatry, social neuroscience, developmental science and the study of emotion into a single program, and ask how advances in artificial intelligence can serve, and be informed by, a science of the human mind.",
         ],
         "pills_label": "Research areas",
-        "pills": ["Cognitive neuroscience", "Computational psychiatry", "Social & affective neuroscience", "Developmental science", "Neuropsychology", "Psychobiology", "Emotion & AI"],
+        "pills": ["Cognitive neuroscience", "Computational psychiatry", "Social & affective neuroscience", "Developmental science", "Neuropsychology", "Psychobiology", "Brain stimulation"],
     },
     "multi": {
         "kicker": "Our approach",
@@ -463,7 +421,7 @@ EN = {
         "paras": [
             "The division's defining commitment is that rigorous, mechanistic models of how humans think and feel cannot be built from inside a single discipline. A mechanism is a claim about how parts interact to produce a phenomenon, and the parts of human thought and feeling live at different levels: ion channels and brain rhythms, learning rules and value computations, developing concepts, bodies in contact, and the social groups that shape all of them. A model that explains anxiety only at the level of oscillations, or only at the level of beliefs, is not yet a mechanism.",
             "That is why the division deliberately brings computational psychiatry, magnetoencephalography and electrophysiology, developmental science, social neuroscience, neuropsychology and pharmacology into one program. Formal models give neural data a hypothesis to test; neural data constrain models that would otherwise fit behavior equally well; developmental and social perspectives reveal where a mechanism comes from and what it is for. Each discipline supplies a check on the others, and the result is explanation that is both precise and faithful to the complexity of a human life.",
-            "For students, this means learning to move between levels: to write a reinforcement-learning model in the morning, analyze MEG source estimates in the afternoon, and ask in a seminar how both bear on a clinical question or on the design of an artificial agent. This fluency is what separates a scientist who can build a mechanism from one who can only describe a correlation, and it is equally valuable in a research lab, a clinic or an R&amp;D team.",
+            "For students, this means learning to move between levels: to write a reinforcement-learning model one day, analyze MEG source estimates the next, and ask how both bear on a clinical question or on the design of an artificial agent. This fluency is what separates a scientist who can build a mechanism from one who can only describe a correlation, and it is equally valuable in a research lab, a clinic or an R&amp;D team.",
         ],
         "pillars": [
             {"title": "Measure", "text": "Record the brain and body directly: MEG and EEG oscillations, brain stimulation, eye tracking, hormones and physiology, and immersive virtual reality that places people in controlled yet lifelike situations."},
@@ -496,35 +454,30 @@ EN = {
                 "A full research thesis supervised one-on-one by a faculty member, often leading to a conference presentation or publication.",
                 "A combined M.A.-to-PhD track for outstanding students who want to move quickly into doctoral work.",
                 "Access to the Gonda Multidisciplinary Brain Research Center, including its MEG laboratory, and to labs across the department.",
-                "Advanced seminars on current theory, from reinforcement learning to social and affective neuroscience.",
+                "Advanced seminars on current theory across the division's research areas.",
                 "Mentoring on grant writing, international collaboration and scientific communication.",
             ],
             "outro": "In a department survey of track graduates, 85% held research positions.",
         },
     },
-    "comppsych": {
-        "kicker": "A core theme",
-        "title": "What is computational psychiatry?",
-        "paras": [
-            "Computational psychiatry uses mathematical models of brain and behavior to understand, predict and ultimately treat mental illness. Rather than describing symptoms alone, it asks which computations have gone awry: how a person learns from reward and punishment, how they weigh uncertainty, how far ahead they plan, and how beliefs about the self and the world are updated by evidence.",
-            "The field has two complementary strands. <em>Theory-driven</em> approaches build explicit models, such as reinforcement learning, Bayesian inference and active inference, and fit them to a person's choices and brain signals to estimate interpretable parameters like learning rates or the precision of prior beliefs. <em>Data-driven</em> approaches apply machine learning to large clinical, behavioral and neural datasets to find patterns that predict diagnosis, course and treatment response. The most promising work combines the two.",
-            "Why does this matter? Psychiatric diagnoses group together people whose underlying mechanisms may differ widely, and treatments are often chosen by trial and error. Computational phenotypes, parameters that can be measured in a twenty-minute task, offer a way to identify mechanisms that cut across diagnostic categories, to track how they change with treatment, and to design interventions that target them directly.",
+    "directions": {
+        "kicker": "Research in the division",
+        "title": "Current directions",
+        "lede": "Five of the questions our labs are pursuing right now, each combining measurement, modeling and context in its own way.",
+        "items": [
+            {"who": "Sharp Lab", "title": "Computational psychiatry", "text": "Mathematical models of learning, planning and decision-making are fitted to people's choices to ask which computations go awry in anxiety and compulsivity, and how they change with treatment. The lab combines these models with behavioral tasks, virtual reality and wearable MEG."},
+            {"who": "Peled-Avron Lab", "title": "The neuroscience of touch", "text": "Social touch is one of the earliest and most powerful channels of human connection. The Touch and Neuropsychopharmacology Lab uses EEG, brain stimulation and pharmacology (oxytocin, psychedelics, MDMA) to understand how the brain perceives touch and empathy, and how this changes in autism, depression and PTSD."},
+            {"who": "Gordon Lab", "title": "Synchrony in multimodal measurement", "text": "When people interact, their brains, bodies and behavior fall into and out of sync. The Social Neuroscience Lab measures synchrony across physiology, hormones, movement and neural signals in pairs and groups, asking when it helps or hurts cohesion and performance, with the support of an ERC Consolidator Grant."},
+            {"who": "Diesendruck Lab", "title": "The development of beliefs", "text": "How do children come to believe that social categories such as ethnicity, religion and gender carry deep “essences”? The Language and Cognitive Development Lab traces how beliefs about the social world emerge in childhood and how they shape intergroup attitudes, moral judgment and cultural learning."},
+            {"who": "Goldstein Lab", "title": "Measuring thoughts and emotions with MEG", "text": "Magnetoencephalography captures brain activity millisecond by millisecond. In Israel's only MEG laboratory, the lab tracks the fast oscillations and connectivity that underlie perception, language, emotion and the sense of self, from meditation to the way an audience synchronizes with a speaker."},
         ],
-        "callout": "In our division, students learn to build and fit these models themselves. A dedicated computational psychiatry practicum walks students through task design, model specification, parameter estimation and model comparison, with applications to anxiety, compulsivity, depression and more.",
-        "reading": [reading("Foundational readings", COMP_PSYCH_READING, "DOI")],
     },
     "emotion_ai": {
-        "kicker": "Emotion science meets artificial intelligence",
-        "title": "Why a science of human emotion matters for building AI",
+        "kicker": "Human minds and artificial intelligence",
+        "title": "Where human cognition meets machine cognition",
         "paras": [
-            "Modern AI systems learn from reward, plan over possible futures and act under uncertainty, exactly the problems that emotions evolved to solve in biological agents. Fear reallocates attention and shortens planning horizons; curiosity drives exploration; mood summarizes whether the world is going better or worse than expected and adjusts learning accordingly. Treating emotions as computations, rather than as noise to be engineered away, gives AI researchers a principled source of design ideas and gives psychologists a formal language for what emotions do.",
-            "This is the premise of <em>NeuroAI</em>, the growing exchange between neuroscience and artificial intelligence. Landmark papers have argued that the brain remains the best existing proof that general intelligence is possible, and that mechanisms discovered in neuroscience, from replay and attention to intrinsic motivation and meta-learning, have repeatedly inspired advances in machine learning. Our division extends this conversation to affect: how emotion shapes valuation, learning and social behavior, and what that implies for the design, alignment and evaluation of artificial agents.",
-            "Courses in the division examine both directions of this exchange. Students read the primary literature on neuroscience-inspired AI, learn how reinforcement learning and Bayesian models formalize emotional processes, and discuss how affective science can inform safer, more human-compatible AI, including the limits of inferring emotion from faces, voices and text.",
-        ],
-        "callout": "Division courses on emotion and AI treat emotions as computations that guide learning, valuation and planning in natural and artificial agents, drawing on computational psychiatry, affective neuroscience and the NeuroAI literature.",
-        "reading": [
-            reading("NeuroAI: key works", NEUROAI_READING, "DOI"),
-            reading("Emotion as computation", EMOTION_AI_READING, "Link"),
+            "Artificial intelligence now touches every field represented in the division, from models of learning and decision-making to the analysis of brain, physiological and behavioral data. In our classes we discuss how ongoing developments in AI can help promote our multidisciplinary interests: sharper models of how people think and feel, better tools for rich multimodal data, and new questions about the mind that were out of reach only a few years ago.",
+            "The program also prepares students to think carefully about how human cognition and emotion might differ from machine cognition. That question matters to industry, which builds systems that people must work alongside, and to academia, which builds theories of the mind that machine learning both challenges and informs. Graduates leave able to hold both perspectives at once.",
         ],
     },
     "faculty": {
@@ -537,19 +490,11 @@ EN = {
     "path": {
         "kicker": "A tailor-made path",
         "title": "Your program, built around you",
-        "lede": "No two students arrive with the same background or leave toward the same destination. From the first semester, each student works with a faculty mentor to assemble a plan: a thesis lab, a sequence of seminars and a set of practica that build exactly the skills their path requires.",
+        "lede": "No two students arrive with the same background or leave toward the same destination. From the first semester, each student works with a faculty mentor to shape a plan: a thesis lab, a choice of seminars and electives, and the research experiences that build exactly the skills their path requires.",
         "steps": [
             {"title": "Choose a lab and a mentor", "text": "Applicants rank three potential supervisors from the department list. Once admitted, your supervisor becomes your guide to the program, the thesis and the career decisions beyond it."},
-            {"title": "Assemble your toolkit", "text": "Two research practica (4 credits each) and six elective courses let you combine, for example, computational modeling with MEG analysis, or social-neuroscience methods with machine learning."},
+            {"title": "Shape your toolkit", "text": "With your mentor, choose the seminars, electives and hands-on experiences that fit your direction, whether that pairs computational modeling with MEG analysis or social-neuroscience methods with machine learning."},
             {"title": "Produce original research", "text": "The thesis is a genuine research project. Many students present at international conferences or publish before they graduate, whether they are heading to a PhD or to industry."},
-        ],
-        "practica": [
-            {"icon": "model", "title": "Computational psychiatry practicum", "text": "Design behavioral tasks, specify reinforcement-learning and Bayesian models, fit them to data and compare them, with applications to anxiety, compulsivity and mood.",
-             "bullets": ["Model building and model fitting in Python", "Task design and online data collection", "Critical reading of the primary literature"]},
-            {"icon": "meg", "title": "MEG analysis practicum", "text": "Hands-on training in magnetoencephalography at the Gonda Multidisciplinary Brain Research Center, from data acquisition to source-level analysis of brain oscillations.",
-             "bullets": ["Preprocessing and artifact rejection", "Time-frequency and source analysis (e.g., MNE-Python)", "Experimental design for MEG and EEG"]},
-            {"icon": "tools", "title": "Cutting-edge tools", "text": "A rotating practicum in the methods that define contemporary cognitive and social neuroscience.",
-             "bullets": ["Eye tracking, EEG, TMS and tDCS", "Immersive virtual reality (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>)", "Computational modelling and machine learning for behavioral and neural data", "Interpersonal synchrony and physiological recording"]},
         ],
     },
     "apply": {
@@ -590,7 +535,7 @@ EN = {
 HE = {
     "meta": {
         "title": "פק״רם · פסיכולוגיה, קוגניציה, רגש ומוח · אוניברסיטת בר-אילן",
-        "description": "המסלול המחקרי לתואר שני בפסיכולוגיה, קוגניציה, רגש ומוח במחלקה לפסיכולוגיה באוניברסיטת בר-אילן: פסיכיאטריה חישובית, MEG, נוירו-מדע חברתי ורגשי, ומדע הרגש עבור בינה מלאכותית. מסלולים לתעשייה ולאקדמיה.",
+        "description": "המסלול המחקרי לתואר שני בפסיכולוגיה, קוגניציה, רגש ומוח במחלקה לפסיכולוגיה באוניברסיטת בר-אילן: פסיכיאטריה חישובית, מדעי המוח של המגע, סנכרון בין-אישי, התפתחות של אמונות ו-MEG. מסלולים לתעשייה ולאקדמיה.",
     },
     "skip": "דלגו לתוכן",
     "nav_label": "ניווט ראשי",
@@ -601,8 +546,8 @@ HE = {
         ("about", "על המסלול"),
         ("multidisciplinary", "הגישה שלנו"),
         ("pathways", "מסלולי קריירה"),
-        ("computational-psychiatry", "פסיכיאטריה חישובית"),
-        ("emotion-ai", "רגש ובינה מלאכותית"),
+        ("directions", "כיוונים נוכחיים"),
+        ("emotion-ai", "נפש ובינה מלאכותית"),
         ("faculty", "סגל"),
         ("your-path", "המסלול שלך"),
         ("apply", "הרשמה"),
@@ -630,10 +575,10 @@ HE = {
         "paras": [
             "פק״רם הם ראשי התיבות של <em>פסיכולוגיה, קוגניציה, רגש ומוח</em>, המסלול המחקרי לתואר שני במחלקה לפסיכולוגיה באוניברסיטת בר-אילן. תהליכים קוגניטיביים, רגשיים והתנהגותיים במוח מתקיימים באינטראקציה רציפה, ויחד הם מכוונים את ההתנהגות האנושית. המסלול מעמיק בקשרים האלה, מן התיאוריה הבסיסית ועד למחקר היישומי.",
             "הסטודנטיות והסטודנטים לומדים למדוד פעילות מוחית בזמן אמת, לנתח תגובות פיזיולוגיות ולבצע ניסויים התנהגותיים באמצעות טכנולוגיות חישה מתקדמות: מעקב עיניים, EEG ו-MEG, גרייה מוחית (TMS ו-tDCS), רישום אלקטרופיזיולוגי, מציאות מדומה בחזית הטכנולוגיה עם קסדת <a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>, ומידול חישובי. כל סטודנט משלים עבודת תזה באחת ממעבדות המחלקה בהנחיה צמודה של חבר סגל, ורבים משתתפים בפרויקטי מחקר עם בתי חולים ומכוני מחקר שותפים.",
-            "הייחוד של המסלול הוא השילוב בין מדידה קפדנית לבין מידול פורמלי. לצד מדעי המוח הקוגניטיביים הקלאסיים, סגל המסלול מביא לתוכנית אחת פסיכיאטריה חישובית, נוירו-מדע חברתי, מדעי ההתפתחות וחקר הרגש, ושואל יותר ויותר מה יכול מדע הנפש האנושית ללמד את מי שבונים בינה מלאכותית.",
+            "הייחוד של המסלול הוא השילוב בין מדידה קפדנית לבין מידול פורמלי. לצד מדעי המוח הקוגניטיביים הקלאסיים, סגל המסלול מביא לתוכנית אחת פסיכיאטריה חישובית, נוירו-מדע חברתי, מדעי ההתפתחות וחקר הרגש, ושואל כיצד ההתקדמות בבינה מלאכותית יכולה לשרת מדע של הנפש האנושית ולהיות מוזנת ממנו.",
         ],
         "pills_label": "תחומי מחקר",
-        "pills": ["מדעי המוח הקוגניטיביים", "פסיכיאטריה חישובית", "נוירו-מדע חברתי ורגשי", "מדעי ההתפתחות", "נוירופסיכולוגיה", "פסיכוביולוגיה", "רגש ובינה מלאכותית"],
+        "pills": ["מדעי המוח הקוגניטיביים", "פסיכיאטריה חישובית", "נוירו-מדע חברתי ורגשי", "מדעי ההתפתחות", "נוירופסיכולוגיה", "פסיכוביולוגיה", "גרייה מוחית"],
     },
     "multi": {
         "kicker": "הגישה שלנו",
@@ -641,7 +586,7 @@ HE = {
         "paras": [
             "המחויבות המגדירה של המסלול היא שמודלים מנגנוניים וקפדניים של האופן שבו בני אדם חושבים ומרגישים אינם יכולים להיבנות מתוך דיסציפלינה אחת. מנגנון הוא טענה על האופן שבו חלקים פועלים זה על זה כדי לייצר תופעה, והחלקים של המחשבה והרגש האנושיים נמצאים ברמות שונות: תעלות יונים ומקצבים מוחיים, כללי למידה וחישובי ערך, מושגים מתפתחים, גופים במגע, והקבוצות החברתיות המעצבות את כולם. מודל שמסביר חרדה רק ברמת התנודות המוחיות, או רק ברמת האמונות, עדיין אינו מנגנון.",
             "זו הסיבה שהמסלול מאגד במכוון פסיכיאטריה חישובית, מגנטואנצפלוגרפיה ואלקטרופיזיולוגיה, מדעי ההתפתחות, נוירו-מדע חברתי, נוירופסיכולוגיה ופרמקולוגיה בתוכנית אחת. מודלים פורמליים נותנים לנתונים העצביים השערה לבדיקה; נתונים עצביים מגבילים מודלים שאחרת היו מתאימים להתנהגות במידה שווה; נקודות המבט ההתפתחותית והחברתית חושפות מאין מגיע מנגנון ולשם מה הוא קיים. כל דיסציפלינה מספקת בקרה על האחרות, והתוצאה היא הסבר מדויק ונאמן למורכבות של חיי אדם.",
-            "עבור הסטודנטים פירוש הדבר ללמוד לנוע בין רמות: לכתוב מודל של למידת חיזוק בבוקר, לנתח אומדני מקור של MEG אחר הצהריים, ולשאול בסמינר כיצד שניהם נוגעים לשאלה קלינית או לתכנון של סוכן מלאכותי. השליטה הזו היא מה שמבדיל בין מדענית שיכולה לבנות מנגנון לבין מי שיכול רק לתאר מתאם, והיא בעלת ערך שווה במעבדת מחקר, במרפאה או בצוות מו״פ.",
+            "עבור הסטודנטים פירוש הדבר ללמוד לנוע בין רמות: לכתוב מודל של למידת חיזוק ביום אחד, לנתח אומדני מקור של MEG למחרת, ולשאול כיצד שניהם נוגעים לשאלה קלינית או לתכנון של סוכן מלאכותי. השליטה הזו היא מה שמבדיל בין מדענית שיכולה לבנות מנגנון לבין מי שיכול רק לתאר מתאם, והיא בעלת ערך שווה במעבדת מחקר, במרפאה או בצוות מו״פ.",
         ],
         "pillars": [
             {"title": "למדוד", "text": "לרשום את המוח והגוף ישירות: תנודות MEG ו-EEG, גרייה מוחית, מעקב עיניים, הורמונים ופיזיולוגיה, ומציאות מדומה סוחפת שמציבה אנשים במצבים מבוקרים אך דמויי-חיים."},
@@ -674,35 +619,30 @@ HE = {
                 "עבודת תזה מחקרית מלאה בהנחיה אישית של חבר סגל, שמובילה לעיתים קרובות להצגה בכנס או לפרסום.",
                 "מסלול משולב לתואר שלישי לסטודנטים מצטיינים המעוניינים להתקדם במהירות למחקר דוקטורלי.",
                 "גישה למרכז הרב-תחומי לחקר המוח ע״ש גונדה, כולל מעבדת ה-MEG, ולמעבדות ברחבי המחלקה.",
-                "סמינרים מתקדמים בתיאוריה עדכנית, מלמידת חיזוק ועד נוירו-מדע חברתי ורגשי.",
+                "סמינרים מתקדמים בתיאוריה עדכנית על פני תחומי המחקר של המסלול.",
                 "ליווי בכתיבת הצעות מחקר, בשיתופי פעולה בינלאומיים ובתקשורת מדעית.",
             ],
             "outro": "בסקר מחלקתי בקרב בוגרי המסלול, 85% מהם הועסקו בתפקידי מחקר.",
         },
     },
-    "comppsych": {
-        "kicker": "נושא ליבה",
-        "title": "מהי פסיכיאטריה חישובית?",
-        "paras": [
-            "פסיכיאטריה חישובית משתמשת במודלים מתמטיים של המוח ושל ההתנהגות כדי להבין, לנבא ובסופו של דבר לטפל במחלות נפש. במקום לתאר סימפטומים בלבד, היא שואלת אילו חישובים השתבשו: כיצד אדם לומד מתגמול ומעונש, כיצד הוא שוקל אי-ודאות, כמה רחוק קדימה הוא מתכנן, וכיצד אמונות על העצמי ועל העולם מתעדכנות לנוכח ראיות.",
-            "לתחום שני ענפים משלימים. גישות <em>מונחות-תיאוריה</em> בונות מודלים מפורשים, כמו למידת חיזוק, הסקה בייסיאנית והסקה פעילה, ומתאימות אותם לבחירות ולאותות המוחיים של האדם כדי לאמוד פרמטרים ברי-פירוש, כגון קצב למידה או מידת הדיוק של אמונות קודמות. גישות <em>מונחות-נתונים</em> מפעילות למידת מכונה על מאגרי נתונים קליניים, התנהגותיים ועצביים גדולים כדי לאתר דפוסים המנבאים אבחנה, מהלך ותגובה לטיפול. העבודה המבטיחה ביותר משלבת בין השתיים.",
-            "מדוע זה חשוב? אבחנות פסיכיאטריות מקבצות יחד אנשים שהמנגנונים שבבסיס מצבם עשויים להיות שונים מאוד, והטיפול נבחר לעיתים קרובות בניסוי וטעייה. פנוטיפים חישוביים, פרמטרים שניתן למדוד במטלה של עשרים דקות, מציעים דרך לזהות מנגנונים החוצים קטגוריות אבחנתיות, לעקוב אחר השינוי בהם במהלך הטיפול, ולתכנן התערבויות המכוונות אליהם ישירות.",
+    "directions": {
+        "kicker": "המחקר במסלול",
+        "title": "כיוונים נוכחיים",
+        "lede": "חמש מהשאלות שהמעבדות שלנו חוקרות כעת, וכל אחת מהן משלבת מדידה, מידול והקשר בדרכה שלה.",
+        "items": [
+            {"who": "מעבדת שארפ", "title": "פסיכיאטריה חישובית", "text": "מודלים מתמטיים של למידה, תכנון וקבלת החלטות מותאמים לבחירות של אנשים כדי לשאול אילו חישובים משתבשים בחרדה ובכפייתיות, וכיצד הם משתנים בטיפול. המעבדה משלבת מודלים אלה עם מטלות התנהגותיות, מציאות מדומה ו-MEG לביש."},
+            {"who": "מעבדת פלד-אברון", "title": "מדעי המוח של המגע", "text": "מגע חברתי הוא אחד הערוצים המוקדמים והחזקים ביותר של קשר אנושי. המעבדה למגע ונוירופסיכופרמקולוגיה משתמשת ב-EEG, בגרייה מוחית ובפרמקולוגיה (אוקסיטוצין, פסיכדלים, MDMA) כדי להבין כיצד המוח תופס מגע ואמפתיה, וכיצד הדבר משתנה באוטיזם, בדיכאון ובפוסט-טראומה."},
+            {"who": "מעבדת גורדון", "title": "סנכרון במדידה רב-ערוצית", "text": "כשאנשים מקיימים אינטראקציה, המוח, הגוף וההתנהגות שלהם נכנסים לסנכרון ויוצאים ממנו. המעבדה לנוירו-מדע חברתי מודדת סנכרון על פני פיזיולוגיה, הורמונים, תנועה ואותות עצביים בזוגות ובקבוצות, ושואלת מתי הוא מסייע ללכידות ולביצועים ומתי הוא פוגע בהם, בתמיכת מענק ERC Consolidator."},
+            {"who": "מעבדת דיזנדרוק", "title": "ההתפתחות של אמונות", "text": "כיצד ילדים מגיעים להאמין שלקטגוריות חברתיות כמו אתניות, דת ומגדר יש «מהות» עמוקה? המעבדה לשפה ולהתפתחות קוגניטיבית עוקבת אחר האופן שבו אמונות על העולם החברתי צומחות בילדות, וכיצד הן מעצבות עמדות בין-קבוצתיות, שיפוט מוסרי ולמידה תרבותית."},
+            {"who": "מעבדת גולדשטיין", "title": "מדידת מחשבות ורגשות באמצעות MEG", "text": "מגנטואנצפלוגרפיה לוכדת פעילות מוחית ברזולוציה של מילישניות. במעבדת ה-MEG היחידה בישראל, המעבדה עוקבת אחר התנודות המהירות והקישוריות שבבסיס תפיסה, שפה, רגש ותחושת העצמי, ממדיטציה ועד לאופן שבו קהל מסתנכרן עם דובר."},
         ],
-        "callout": "במסלול שלנו הסטודנטים לומדים לבנות ולהתאים את המודלים האלה בעצמם. פרקטיקום ייעודי בפסיכיאטריה חישובית מלווה את הסטודנטים בתכנון מטלות, הגדרת מודלים, אמידת פרמטרים והשוואת מודלים, עם יישומים לחרדה, כפייתיות, דיכאון ועוד.",
-        "reading": [reading("מאמרי יסוד", COMP_PSYCH_READING, "DOI")],
     },
     "emotion_ai": {
-        "kicker": "מדע הרגש פוגש בינה מלאכותית",
-        "title": "מדוע מדע של הרגש האנושי חשוב לבניית בינה מלאכותית",
+        "kicker": "הנפש האנושית ובינה מלאכותית",
+        "title": "היכן שקוגניציה אנושית פוגשת קוגניציה של מכונה",
         "paras": [
-            "מערכות בינה מלאכותית מודרניות לומדות מתגמול, מתכננות על פני עתידים אפשריים ופועלות בתנאי אי-ודאות, בדיוק הבעיות שהרגשות התפתחו כדי לפתור אצל יצורים ביולוגיים. פחד מפנה מחדש את הקשב ומקצר את אופק התכנון; סקרנות מניעה חקירה; מצב הרוח מסכם אם העולם מתנהל טוב או רע מהצפוי ומכוונן את הלמידה בהתאם. התייחסות לרגשות כאל חישובים, ולא כאל רעש שיש להנדס החוצה, נותנת לחוקרי בינה מלאכותית מקור עקרוני לרעיונות תכנון, ולפסיכולוגים שפה פורמלית לתיאור מה שהרגשות עושים.",
-            "זוהי נקודת המוצא של <em>NeuroAI</em>, הדיאלוג המתרחב בין מדעי המוח לבינה מלאכותית. מאמרי מפתח טענו שהמוח הוא עדיין ההוכחה הקיימת הטובה ביותר לכך שאינטליגנציה כללית אפשרית, ושמנגנונים שהתגלו במדעי המוח, משחזור (replay) וקשב ועד מוטיבציה פנימית ומטא-למידה, היוו שוב ושוב השראה להתקדמות בלמידת מכונה. המסלול שלנו מרחיב את השיח הזה אל הרגש: כיצד רגש מעצב הערכת ערך, למידה והתנהגות חברתית, ומה משתמע מכך לתכנון, ליישור (alignment) ולהערכה של סוכנים מלאכותיים.",
-            "קורסים במסלול בוחנים את שני כיווני החילופין. הסטודנטים קוראים את הספרות הראשונית על בינה מלאכותית בהשראת מדעי המוח, לומדים כיצד למידת חיזוק ומודלים בייסיאניים מפרמלים תהליכים רגשיים, ודנים כיצד מדע הרגש יכול לתרום לבינה מלאכותית בטוחה יותר ומותאמת יותר לאדם, כולל המגבלות של הסקת רגש מפנים, מקול ומטקסט.",
-        ],
-        "callout": "הקורסים במסלול בתחום הרגש והבינה המלאכותית מתייחסים לרגשות כאל חישובים המכוונים למידה, הערכת ערך ותכנון אצל סוכנים טבעיים ומלאכותיים, ונשענים על פסיכיאטריה חישובית, נוירו-מדע רגשי וספרות ה-NeuroAI.",
-        "reading": [
-            reading("NeuroAI: עבודות מפתח", NEUROAI_READING, "DOI"),
-            reading("רגש כחישוב", EMOTION_AI_READING, "קישור"),
+            "בינה מלאכותית נוגעת כיום בכל תחום המיוצג במסלול, ממודלים של למידה וקבלת החלטות ועד לניתוח נתונים מוחיים, פיזיולוגיים והתנהגותיים. בשיעורים אנו דנים כיצד ההתפתחויות המתמשכות בבינה מלאכותית יכולות לקדם את תחומי העניין הרב-תחומיים שלנו: מודלים חדים יותר של האופן שבו אנשים חושבים ומרגישים, כלים טובים יותר לנתונים רב-ערוציים עשירים, ושאלות חדשות על הנפש שלפני שנים ספורות היו מחוץ להישג יד.",
+            "התוכנית גם מכינה את הסטודנטים לחשוב בקפידה על האופן שבו קוגניציה ורגש אנושיים עשויים להיות שונים מקוגניציה של מכונה. השאלה הזו חשובה לתעשייה, שבונה מערכות שאנשים צריכים לעבוד לצידן, ולאקדמיה, שבונה תיאוריות של הנפש שלמידת מכונה מאתגרת ומזינה כאחד. הבוגרים יוצאים עם היכולת להחזיק בשתי נקודות המבט בו-זמנית.",
         ],
     },
     "faculty": {
@@ -715,19 +655,11 @@ HE = {
     "path": {
         "kicker": "מסלול תפור אישית",
         "title": "תוכנית שנבנית סביבך",
-        "lede": "אין שני סטודנטים שמגיעים עם אותו רקע או יוצאים לאותו יעד. כבר מהסמסטר הראשון, כל סטודנט בונה יחד עם מנחה מהסגל תוכנית אישית: מעבדת תזה, רצף סמינרים וסל פרקטיקומים שמקנים בדיוק את המיומנויות שהדרך שלו דורשת.",
+        "lede": "אין שני סטודנטים שמגיעים עם אותו רקע או יוצאים לאותו יעד. כבר מהסמסטר הראשון, כל סטודנט בונה יחד עם מנחה מהסגל תוכנית אישית: מעבדת תזה, בחירה של סמינרים וקורסי בחירה, וההתנסויות המחקריות שמקנות בדיוק את המיומנויות שהדרך שלו דורשת.",
         "steps": [
             {"title": "בחירת מעבדה ומנחה", "text": "המועמדים מדרגים שלושה מנחים פוטנציאליים מרשימת המנחים של המחלקה. לאחר הקבלה, המנחה הופך למלווה שלכם בתוכנית, בתזה ובהחלטות הקריירה שמעבר לה."},
-            {"title": "הרכבת ארגז הכלים", "text": "שני פרקטיקומים מחקריים (4 נ״ז כל אחד) ושישה קורסי בחירה מאפשרים לשלב, למשל, מידול חישובי עם ניתוח MEG, או שיטות של נוירו-מדע חברתי עם למידת מכונה."},
+            {"title": "עיצוב ארגז הכלים", "text": "יחד עם המנחה, בחרו את הסמינרים, קורסי הבחירה וההתנסויות המעשיות שמתאימים לכיוון שלכם, בין אם הוא משלב מידול חישובי עם ניתוח MEG ובין אם שיטות של נוירו-מדע חברתי עם למידת מכונה."},
             {"title": "מחקר מקורי", "text": "התזה היא פרויקט מחקר של ממש. סטודנטים רבים מציגים בכנסים בינלאומיים או מפרסמים עוד לפני סיום התואר, בין אם פניהם לדוקטורט ובין אם לתעשייה."},
-        ],
-        "practica": [
-            {"icon": "model", "title": "פרקטיקום בפסיכיאטריה חישובית", "text": "תכנון מטלות התנהגותיות, הגדרת מודלים של למידת חיזוק ומודלים בייסיאניים, התאמתם לנתונים והשוואה ביניהם, עם יישומים לחרדה, כפייתיות ומצב רוח.",
-             "bullets": ["בניית מודלים והתאמתם ב-Python", "תכנון מטלות ואיסוף נתונים מקוון", "קריאה ביקורתית של הספרות הראשונית"]},
-            {"icon": "meg", "title": "פרקטיקום בניתוח MEG", "text": "הכשרה מעשית במגנטואנצפלוגרפיה במרכז הרב-תחומי לחקר המוח ע״ש גונדה, מאיסוף הנתונים ועד ניתוח ברמת המקור של תנודות מוחיות.",
-             "bullets": ["עיבוד מקדים וניקוי ארטיפקטים", "ניתוח זמן-תדר וניתוח מקורות (למשל ב-MNE-Python)", "תכנון ניסויים ל-MEG ול-EEG"]},
-            {"icon": "tools", "title": "כלים בחזית המחקר", "text": "פרקטיקום מתחלף בשיטות המגדירות את מדעי המוח הקוגניטיביים והחברתיים העכשוויים.",
-             "bullets": ["מעקב עיניים, EEG, TMS ו-tDCS", "מציאות מדומה סוחפת (<a href=\"https://somniumspace.com/vr1\" target=\"_blank\" rel=\"noopener\">Somnium VR1</a>)", "מידול חישובי ולמידת מכונה לנתונים התנהגותיים ועצביים", "סנכרון בין-אישי ורישום פיזיולוגי"]},
         ],
     },
     "apply": {

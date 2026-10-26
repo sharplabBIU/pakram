@@ -160,14 +160,6 @@ html[dir="rtl"] .card .tag { letter-spacing: 0; font-size: .82rem; }
 .pill-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 1em; list-style: none; }
 .pill-list li { background: var(--bg-elev); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: .92rem; }
 
-/* Reading lists */
-.reading { margin-top: 28px; }
-.reading h3 { font-size: 1.1rem; margin-bottom: .6em; }
-.reading ol { padding-inline-start: 1.3em; margin: 0; color: var(--ink-2); font-size: .95rem; }
-.reading li { margin: .5em 0; }
-.reading li a { color: var(--teal); }
-.reading .note { color: var(--ink-3); font-size: .88rem; margin-top: .8em; }
-
 /* Faculty */
 .faculty-grid { display: grid; gap: 20px; }
 @media (min-width: 760px) { .faculty-grid { grid-template-columns: 1fr 1fr; } }
@@ -204,16 +196,6 @@ html[dir="rtl"] .prof h4 { letter-spacing: 0; font-size: .88rem; }
   display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
   background: var(--accent-soft); color: var(--navy); font-weight: 700; margin-bottom: 12px;
 }
-.practica { display: grid; gap: 18px; margin-top: 28px; }
-@media (min-width: 800px) { .practica { grid-template-columns: repeat(3, 1fr); } }
-.practicum { background: var(--navy); color: #fff; border-radius: var(--radius); padding: 26px; }
-.practicum h3 { color: #fff; }
-.practicum p { color: rgba(255,255,255,.82); }
-.practicum ul { color: rgba(255,255,255,.88); padding-inline-start: 1.1em; margin: 0; font-size: .95rem; }
-.practicum li { margin: .35em 0; }
-.practicum .icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,.12); display: grid; place-items: center; margin-bottom: 14px; }
-.practicum .icon svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
 /* Apply */
 .apply-grid { display: grid; gap: 24px; }
 @media (min-width: 900px) { .apply-grid { grid-template-columns: 1.2fr .8fr; } }
@@ -231,7 +213,6 @@ html[dir="rtl"] .prof h4 { letter-spacing: 0; font-size: .88rem; }
 /* RTL polish */
 html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3 { letter-spacing: 0; }
 html[dir="rtl"] .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
-html[dir="rtl"] .reading ol { direction: ltr; text-align: left; }
 html[dir="rtl"] .prof ul.pubs { direction: ltr; text-align: left; }
 
 /* Motion */
@@ -262,8 +243,6 @@ html[dir="rtl"] .prof .key dd.pubs { direction: ltr; text-align: left; }
 .prof details[open] .more { display: none; }
 .prof details > div { padding-top: 4px; }
 .prof details h4 { margin-top: .9em; }
-.practicum a { color: #c3dc87; text-decoration: underline; text-underline-offset: 2px; }
-.practicum a:hover { color: #fff; }
 .fact a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 
 /* Distinctions line under the facts strip */
@@ -284,3 +263,13 @@ html[dir="rtl"] .distinctions .label { letter-spacing: 0; font-size: .88rem; }
   .prof .key { grid-template-columns: 1fr; gap: 2px 0; }
   .prof .key dt { white-space: normal; padding-top: 8px; }
 }
+
+/* Current directions */
+.directions { display: grid; gap: 18px; }
+@media (min-width: 720px) { .directions { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .directions { grid-template-columns: repeat(3, 1fr); } }
+.direction { background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.direction .who { display: inline-block; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); background: var(--teal-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
+html[dir="rtl"] .direction .who { letter-spacing: 0; font-size: .84rem; }
+.direction h3 { font-size: 1.2rem; margin-bottom: .4em; }
+.direction p { margin: 0; color: var(--ink-2); font-size: .96rem; }
