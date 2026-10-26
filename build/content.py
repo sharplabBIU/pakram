@@ -402,10 +402,9 @@ EN = {
         ],
         "awards_label": "Faculty distinctions",
         "awards": [
-            ("ERC", "Starting and Consolidator grants"),
-            ("ISF Bereshit", "Early-career research grant"),
-            ("Only MEG lab", "in Israel"),
-            ("6 top journals", "Psych Review · TiCS · NHB · Nat Commun · Psych Sci · NBR"),
+            {"big": "Top grants", "label": "ERC Starting and Consolidator grants · Israel Science Foundation Bereshit early-career grant"},
+            {"big": "Israel's only MEG lab", "url": "https://www.meglabbiu.org", "label": "Goldstein Lab, Gonda Multidisciplinary Brain Research Center"},
+            {"big": "Publications in top journals", "wide": True, "label": "Psychological Review · Trends in Cognitive Sciences · Nature Human Behaviour · Nature Communications · Psychological Science · Neuroscience &amp; Biobehavioral Reviews"},
         ],
     },
     "about": {
@@ -574,10 +573,9 @@ HE = {
         ],
         "awards_label": "הישגי הסגל",
         "awards": [
-            ("ERC", "מענקי Starting ו-Consolidator"),
-            ("ISF בראשית", "מענק מחקר לחוקרים צעירים"),
-            ("מעבדת ה-MEG היחידה", "בישראל"),
-            ("6 כתבי עת מובילים", "Psych Review · TiCS · NHB · Nat Commun · Psych Sci · NBR"),
+            {"big": "מענקים מובילים", "label": "מענקי ERC Starting ו-Consolidator · מענק «בראשית» של הקרן הלאומית למדע לחוקרים צעירים"},
+            {"big": "מעבדת ה-MEG היחידה בישראל", "url": "https://www.meglabbiu.org", "label": "מעבדת גולדשטיין, המרכז הרב-תחומי לחקר המוח ע״ש גונדה"},
+            {"big": "פרסומים בכתבי עת מובילים", "wide": True, "label": "Psychological Review · Trends in Cognitive Sciences · Nature Human Behaviour · Nature Communications · Psychological Science · Neuroscience &amp; Biobehavioral Reviews"},
         ],
     },
     "about": {

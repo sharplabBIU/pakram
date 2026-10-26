@@ -120,7 +120,11 @@ def render_page(lang: str) -> str:
     dir_attr = "rtl" if lang == "he" else "ltr"
     nav_links = "".join(f'<a href="#{esc(h)}">{esc(t)}</a>' for h, t in c["nav"])
     facts = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{t}</span></div>' for n, t in c["hero"]["facts"])
-    awards = "".join(f'<div class="fact"><b>{esc(n)}</b><span>{esc(t)}</span></div>' for n, t in c["hero"]["awards"])
+    def award_box(a):
+        big = f'<a href="{esc(a["url"])}" target="_blank" rel="noopener">{esc(a["big"])}</a>' if a.get("url") else esc(a["big"])
+        cls = "fact fact-wide" if a.get("wide") else "fact"
+        return f'<div class="{cls}"><b>{big}</b><span>{a["label"]}</span></div>'
+    awards = "".join(award_box(a) for a in c["hero"]["awards"])
     pills = "".join(f"<li>{esc(p)}</li>" for p in c["about"]["pills"])
 
     def paras(ps):

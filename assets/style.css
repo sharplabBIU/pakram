@@ -268,7 +268,10 @@ html[dir="rtl"] .direction .who { letter-spacing: 0; font-size: .84rem; }
 
 /* Awards row: same grid as the facts, in contrasting Bar-Ilan green */
 .facts-awards { margin-top: 12px; background: #0b4f33; border-color: #0b4f33; }
-.facts-awards .fact { background: var(--navy); }
-.facts-awards .fact b { color: #c3dc87; }
-.facts-awards .fact span { color: rgba(255,255,255,.88); }
-.facts-awards .fact a { color: #c3dc87; }
+.facts-awards .fact { background: var(--navy); color: #fff; }
+.facts-awards .fact b { color: #fff; }
+.facts-awards .fact span { color: rgba(255,255,255,.9); }
+.facts-awards .fact b a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.facts-awards .fact b a:hover { color: #c3dc87; }
+.facts-awards .fact-wide { grid-column: span 2; background: #00280f; }
+.facts-awards .fact-wide span { color: #fff; }
