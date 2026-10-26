@@ -370,7 +370,7 @@ REGISTRATION = "https://www.biu.ac.il/registration-and-admission/information/reg
 EN = {
     "meta": {
         "title": "PAKRAM · Psychology, Cognition, Emotion & Brain · Bar-Ilan University",
-        "description": "The research M.A. division in Psychology, Cognition, Emotion and Brain at Bar-Ilan University's Department of Psychology: computational psychiatry, the neuroscience of touch, interpersonal synchrony, the development of beliefs, and MEG. Pathways to industry and academia.",
+        "description": "The research M.A. division in Psychology, Cognition, Emotion and Brain at Bar-Ilan University's Department of Psychology: computational psychiatry, the neuroscience of touch, interpersonal synchrony, the development of beliefs, MEG, brain stimulation, face perception and memory, and developmental psychobiology. Pathways to industry and academia.",
     },
     "skip": "Skip to content",
     "nav_label": "Main navigation",
@@ -463,13 +463,16 @@ EN = {
     "directions": {
         "kicker": "Research in the division",
         "title": "Current directions",
-        "lede": "Five of the questions our labs are pursuing right now, each combining measurement, modeling and context in its own way.",
+        "lede": "What each of our eight labs is pursuing right now, every one combining measurement, modeling and context in its own way.",
         "items": [
             {"who": "Sharp Lab", "title": "Computational psychiatry", "text": "Mathematical models of learning, planning and decision-making are fitted to people's choices to ask which computations go awry in anxiety and compulsivity, and how they change with treatment. The lab combines these models with behavioral tasks, virtual reality and wearable MEG."},
             {"who": "Peled-Avron Lab", "title": "The neuroscience of touch", "text": "Social touch is one of the earliest and most powerful channels of human connection. The Touch and Neuropsychopharmacology Lab uses EEG, brain stimulation and pharmacology (oxytocin, psychedelics, MDMA) to understand how the brain perceives touch and empathy, and how this changes in autism, depression and PTSD."},
             {"who": "Gordon Lab", "title": "Synchrony in multimodal measurement", "text": "When people interact, their brains, bodies and behavior fall into and out of sync. The Social Neuroscience Lab measures synchrony across physiology, hormones, movement and neural signals in pairs and groups, asking when it helps or hurts cohesion and performance, with the support of an ERC Consolidator Grant."},
             {"who": "Diesendruck Lab", "title": "The development of beliefs", "text": "How do children come to believe that social categories such as ethnicity, religion and gender carry deep “essences”? The Language and Cognitive Development Lab traces how beliefs about the social world emerge in childhood and how they shape intergroup attitudes, moral judgment and cultural learning."},
             {"who": "Goldstein Lab", "title": "Measuring thoughts and emotions with MEG", "text": "Magnetoencephalography captures brain activity millisecond by millisecond. In Israel's only MEG laboratory, the lab tracks the fast oscillations and connectivity that underlie perception, language, emotion and the sense of self, from meditation to the way an audience synchronizes with a speaker."},
+            {"who": "Anaki Lab", "title": "Faces, memory and the aging brain", "text": "How does the brain detect and recognize faces, objects and expressions, and what happens to memory in aging, Alzheimer's and Parkinson's disease? The lab combines psychophysics, EEG and the neuropsychology of prosopagnosia with studies of semantic networks in creative cognition."},
+            {"who": "Weller Lab", "title": "Early life, stress and feeding", "text": "How do early-life experience, maternal care, stress and diet shape emotional and feeding regulation? The Developmental Psychobiology Lab uses rat models of depression, obesity and binge eating, with a focus on gut peptides, oxytocin and cortisol, epigenetics and cannabinoids."},
+            {"who": "Lavidor Lab", "title": "Brain stimulation for language, control and creativity", "text": "Non-invasive brain stimulation (TMS, tDCS and tACS) combined with behavioral and EEG methods reveals how the two hemispheres share language, reading, cognitive control and creative thinking, and yields stimulation and training protocols that enhance these abilities."},
         ],
     },
     "emotion_ai": {
@@ -535,7 +538,7 @@ EN = {
 HE = {
     "meta": {
         "title": "פק״רם · פסיכולוגיה, קוגניציה, רגש ומוח · אוניברסיטת בר-אילן",
-        "description": "המסלול המחקרי לתואר שני בפסיכולוגיה, קוגניציה, רגש ומוח במחלקה לפסיכולוגיה באוניברסיטת בר-אילן: פסיכיאטריה חישובית, מדעי המוח של המגע, סנכרון בין-אישי, התפתחות של אמונות ו-MEG. מסלולים לתעשייה ולאקדמיה.",
+        "description": "המסלול המחקרי לתואר שני בפסיכולוגיה, קוגניציה, רגש ומוח במחלקה לפסיכולוגיה באוניברסיטת בר-אילן: פסיכיאטריה חישובית, מדעי המוח של המגע, סנכרון בין-אישי, התפתחות של אמונות, MEG, גרייה מוחית, תפיסת פנים וזיכרון, ופסיכוביולוגיה התפתחותית. מסלולים לתעשייה ולאקדמיה.",
     },
     "skip": "דלגו לתוכן",
     "nav_label": "ניווט ראשי",
@@ -628,13 +631,16 @@ HE = {
     "directions": {
         "kicker": "המחקר במסלול",
         "title": "כיוונים נוכחיים",
-        "lede": "חמש מהשאלות שהמעבדות שלנו חוקרות כעת, וכל אחת מהן משלבת מדידה, מידול והקשר בדרכה שלה.",
+        "lede": "מה שכל אחת משמונה המעבדות שלנו חוקרת כעת, וכל אחת מהן משלבת מדידה, מידול והקשר בדרכה שלה.",
         "items": [
             {"who": "מעבדת שארפ", "title": "פסיכיאטריה חישובית", "text": "מודלים מתמטיים של למידה, תכנון וקבלת החלטות מותאמים לבחירות של אנשים כדי לשאול אילו חישובים משתבשים בחרדה ובכפייתיות, וכיצד הם משתנים בטיפול. המעבדה משלבת מודלים אלה עם מטלות התנהגותיות, מציאות מדומה ו-MEG לביש."},
             {"who": "מעבדת פלד-אברון", "title": "מדעי המוח של המגע", "text": "מגע חברתי הוא אחד הערוצים המוקדמים והחזקים ביותר של קשר אנושי. המעבדה למגע ונוירופסיכופרמקולוגיה משתמשת ב-EEG, בגרייה מוחית ובפרמקולוגיה (אוקסיטוצין, פסיכדלים, MDMA) כדי להבין כיצד המוח תופס מגע ואמפתיה, וכיצד הדבר משתנה באוטיזם, בדיכאון ובפוסט-טראומה."},
             {"who": "מעבדת גורדון", "title": "סנכרון במדידה רב-ערוצית", "text": "כשאנשים מקיימים אינטראקציה, המוח, הגוף וההתנהגות שלהם נכנסים לסנכרון ויוצאים ממנו. המעבדה לנוירו-מדע חברתי מודדת סנכרון על פני פיזיולוגיה, הורמונים, תנועה ואותות עצביים בזוגות ובקבוצות, ושואלת מתי הוא מסייע ללכידות ולביצועים ומתי הוא פוגע בהם, בתמיכת מענק ERC Consolidator."},
             {"who": "מעבדת דיזנדרוק", "title": "ההתפתחות של אמונות", "text": "כיצד ילדים מגיעים להאמין שלקטגוריות חברתיות כמו אתניות, דת ומגדר יש «מהות» עמוקה? המעבדה לשפה ולהתפתחות קוגניטיבית עוקבת אחר האופן שבו אמונות על העולם החברתי צומחות בילדות, וכיצד הן מעצבות עמדות בין-קבוצתיות, שיפוט מוסרי ולמידה תרבותית."},
             {"who": "מעבדת גולדשטיין", "title": "מדידת מחשבות ורגשות באמצעות MEG", "text": "מגנטואנצפלוגרפיה לוכדת פעילות מוחית ברזולוציה של מילישניות. במעבדת ה-MEG היחידה בישראל, המעבדה עוקבת אחר התנודות המהירות והקישוריות שבבסיס תפיסה, שפה, רגש ותחושת העצמי, ממדיטציה ועד לאופן שבו קהל מסתנכרן עם דובר."},
+            {"who": "מעבדת ענקי", "title": "פנים, זיכרון והמוח המזדקן", "text": "כיצד המוח מזהה פנים, עצמים והבעות, ומה קורה לזיכרון בהזדקנות, במחלת אלצהיימר ובפרקינסון? המעבדה משלבת פסיכופיזיקה, EEG והנוירופסיכולוגיה של פרוסופגנוזיה עם מחקר על רשתות סמנטיות בקוגניציה יצירתית."},
+            {"who": "מעבדת ולר", "title": "חיים מוקדמים, דחק ואכילה", "text": "כיצד חוויות מוקדמות בחיים, טיפול אימהי, דחק ותזונה מעצבים ויסות רגשי וויסות אכילה? המעבדה לפסיכוביולוגיה התפתחותית משתמשת במודלים של חולדות לדיכאון, להשמנה ולאכילה בולמוסית, עם התמקדות בפפטידי מעי, באוקסיטוצין ובקורטיזול, באפיגנטיקה ובקנבינואידים."},
+            {"who": "מעבדת לבידור", "title": "גרייה מוחית לשפה, לבקרה וליצירתיות", "text": "גרייה מוחית לא-פולשנית (TMS, tDCS ו-tACS) בשילוב שיטות התנהגותיות ו-EEG חושפת כיצד שתי ההמיספרות חולקות ביניהן שפה, קריאה, בקרה קוגניטיבית וחשיבה יצירתית, ומניבה פרוטוקולים של גרייה ואימון המשפרים יכולות אלה."},
         ],
     },
     "emotion_ai": {
