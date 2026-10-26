@@ -16,51 +16,7 @@ sys.path.insert(0, HERE)
 
 from content import SITE  # noqa: E402
 
-import math
-
-
-def hero_art(ring: dict) -> str:
-    """Ring of five research symbols with the Ψ mark at the centre."""
-    labels, bubble = ring["labels"], ring["bubble"]
-    cx, cy, R, NR = 260, 224, 140, 36
-    angles = [-90, -18, 54, 126, 198]
-    nodes = [(cx + R * math.cos(math.radians(a)), cy + R * math.sin(math.radians(a))) for a in angles]
-    icons = [
-        # touch: open hand
-        '<path d="M11 21 V11 a2.2 2.2 0 0 1 4.4 0 V18 V7 a2.2 2.2 0 0 1 4.4 0 V18 V9 a2.2 2.2 0 0 1 4.4 0 V18 V12 a2.2 2.2 0 0 1 4.4 0 V24 a8 8 0 0 1 -8 8 H18.5 a8 8 0 0 1 -6.4 -3.2 L7.6 22.7 a2.2 2.2 0 0 1 3.4 -2.8 Z"/>',
-        # social synchrony: two people joined by a wave
-        '<circle cx="10.5" cy="10" r="4"/><circle cx="25.5" cy="10" r="4"/><path d="M3 20 a7.5 7.5 0 0 1 15 0"/><path d="M18 20 a7.5 7.5 0 0 1 15 0"/><path d="M4 29 q3.5 -6 7 0 t7 0 t7 0 t7 0"/>',
-        # reinforcement learning: loop arrow with a reward star
-        '<path d="M29 15 a11.5 11.5 0 1 0 -1.5 12"/><path d="M29 8 v7 h-7"/><path d="M18 13.5 l1.7 3.6 3.9 .5 -2.8 2.7 .7 3.9 -3.5 -1.9 -3.5 1.9 .7 -3.9 -2.8 -2.7 3.9 -.5 Z" fill="#004128" stroke="none"/>',
-        # language development: speech bubble with letters
-        '<path d="M7 6 h22 a3.5 3.5 0 0 1 3.5 3.5 v13 a3.5 3.5 0 0 1 -3.5 3.5 H17 l-7 6 v-6 H7 a3.5 3.5 0 0 1 -3.5 -3.5 v-13 A3.5 3.5 0 0 1 7 6 Z"/><text x="18" y="20" text-anchor="middle" font-size="11.5" font-weight="700" fill="#004128" stroke="none" font-family="Heebo, Rubik, sans-serif">' + bubble + '</text>',
-        # MEG: head with a crown of sensors and a signal trace
-        '<circle cx="18" cy="21" r="7.5"/><circle cx="18" cy="7.5" r="1.6" fill="#004128" stroke="none"/><circle cx="8.5" cy="11.5" r="1.6" fill="#004128" stroke="none"/><circle cx="27.5" cy="11.5" r="1.6" fill="#004128" stroke="none"/><circle cx="4.5" cy="20" r="1.6" fill="#004128" stroke="none"/><circle cx="31.5" cy="20" r="1.6" fill="#004128" stroke="none"/><path d="M4 33 h6 l2 -4 l3 7 l3 -6 l2 3 h12"/>',
-    ]
-    spokes = "".join(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}"/>' for x, y in nodes)
-    out = [f'<svg viewBox="0 0 520 440" role="img" aria-label="{esc(", ".join(labels))}" xmlns="http://www.w3.org/2000/svg">']
-    out.append('<defs><radialGradient id="ringGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#87cd7d" stop-opacity=".35"/><stop offset="1" stop-color="#87cd7d" stop-opacity="0"/></radialGradient></defs>')
-    out.append(f'<circle cx="{cx}" cy="{cy}" r="{R + 60}" fill="url(#ringGlow)"/>')
-    out.append(f'<g stroke="#c3dc87" stroke-width="1.5" stroke-dasharray="3 5">{spokes}</g>')
-    out.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="#006937" stroke-width="2.5"/>')
-    out.append(f'<circle cx="{cx}" cy="{cy}" r="48" fill="#e7f2d3" stroke="#87cd7d" stroke-width="1.5"/>')
-    out.append(f'<text x="{cx}" y="{cy + 21}" text-anchor="middle" font-family="Frank Ruhl Libre, Rubik, serif" font-weight="700" font-size="60" fill="#004128">Ψ</text>')
-    for i, ((x, y), icon, label) in enumerate(zip(nodes, icons, labels)):
-        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{NR}" fill="#fff" stroke="#006937" stroke-width="2.5"/>')
-        out.append(f'<g transform="translate({x - 18:.1f},{y - 18:.1f})" fill="none" stroke="#004128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{icon}</g>')
-        words = label.split(" ")
-        if i == 0:      # top
-            tx, ty, anchor = cx, y - NR - 14, "middle"; lines = [label]
-        elif i == 1:    # right
-            tx, ty, anchor = x + NR + 10, y + (5 if len(words) == 1 else -3), "start"; lines = words if len(words) == 2 else [label]
-        elif i == 4:    # left
-            tx, ty, anchor = x - NR - 10, y + (5 if len(words) == 1 else -3), "end"; lines = words if len(words) == 2 else [label]
-        else:           # bottom pair
-            tx, ty, anchor = x, y + NR + 18, "middle"; lines = words if len(words) == 2 else [label]
-        tspans = "".join(f'<tspan x="{tx:.1f}" dy="{0 if k == 0 else 16}">{esc(w)}</tspan>' for k, w in enumerate(lines))
-        out.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="{anchor}" font-size="13.5" font-weight="600" fill="#2f3b47" font-family="Heebo, Rubik, system-ui, sans-serif">{tspans}</text>')
-    out.append("</svg>")
-    return "".join(out)
+from hero_art import hero_art  # noqa: E402
 
 
 def esc(s: str) -> str:
@@ -209,7 +165,7 @@ def render_page(lang: str) -> str:
         <a class="btn btn-secondary" href="#apply">{esc(c["hero"]["cta_secondary"])}</a>
       </div>
     </div>
-    <div class="hero-art">{hero_art(c["hero"]["ring"])}</div>
+    <div class="hero-art">{hero_art(esc(c["hero"]["ring"]["aria"]))}</div>
   </div>
 </section>
 <div class="wrap facts-wrap">
