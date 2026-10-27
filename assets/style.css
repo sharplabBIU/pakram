@@ -302,3 +302,10 @@ html[lang="he"] .brand-mark { font-family: "Rubik", sans-serif; }
 /* Hero headline: one face, black */
 .hero h1 { color: #000; }
 .fact a { white-space: nowrap; }
+
+/* Admissions notice at the top of the banner */
+.notice { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 14px; padding: 6px 14px 6px 10px; border-radius: 999px; background: var(--navy); color: #fff; font-size: .86rem; font-weight: 600; text-decoration: none; box-shadow: var(--shadow); max-width: 100%; }
+html[dir="rtl"] .notice { padding: 6px 10px 6px 14px; }
+.notice:hover { text-decoration: none; background: var(--navy-2); }
+.notice .dot { width: 8px; height: 8px; border-radius: 50%; background: #c3dc87; flex: none; box-shadow: 0 0 0 3px rgba(195, 220, 135, .3); }
+.notice .arrow { color: #c3dc87; font-weight: 700; }

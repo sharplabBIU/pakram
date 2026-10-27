@@ -157,6 +157,7 @@ def render_page(lang: str) -> str:
 <section class="hero" id="top">
   <div class="wrap">
     <div>
+      <a class="notice" href="#apply"><span class="dot" aria-hidden="true"></span><span>{esc(c["hero"]["notice"]["text"])}</span><span class="arrow" aria-hidden="true">{c["hero"]["notice"]["arrow"]}</span></a>
       <span class="kicker">{esc(c["hero"]["kicker"])}</span>
       <h1>{c["hero"]["title"]}</h1>
       <p class="lede">{c["hero"]["lede"]}</p>
