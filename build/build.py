@@ -74,6 +74,13 @@ def render_faculty(members: list[dict], labels: dict) -> str:
     return "\n".join(out)
 
 
+def asset_version(rel: str) -> str:
+    """Short content hash so browsers fetch a fresh copy whenever the file changes."""
+    import hashlib
+    with open(os.path.join(ROOT, rel), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
 def render_page(lang: str) -> str:
     c = SITE[lang]
     other = "he" if lang == "en" else "en"
@@ -129,7 +136,7 @@ def render_page(lang: str) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{fonts_url}" rel="stylesheet">
-<link rel="stylesheet" href="{base}assets/style.css">
+<link rel="stylesheet" href="{base}assets/style.css?v={asset_version("assets/style.css")}">
 </head>
 <body>
 <a class="sr-only" href="#main">{esc(c["skip"])}</a>
@@ -299,7 +306,7 @@ def render_page(lang: str) -> str:
     <div class="footer-links">{footer_links}</div>
   </div>
 </footer>
-<script src="{base}assets/site.js" defer></script>
+<script src="{base}assets/site.js?v={asset_version("assets/site.js")}" defer></script>
 </body>
 </html>
 """
